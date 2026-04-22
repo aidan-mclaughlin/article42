@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Article 42 — You have rights. Here's what they are.</title>
+<meta name="description" content="A friendly field guide to your rights under the UN Convention on the Rights of the Child. For ages 8 to 18." />
+<meta name="theme-color" content="#fef3c7" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Article 42 — You have rights. Here's what they are." />
+<meta property="og:description" content="A friendly field guide to your rights under the UN Convention on the Rights of the Child. For ages 8 to 18." />
+<meta property="og:site_name" content="Article 42" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Article 42 — You have rights. Here's what they are." />
+<meta name="twitter:description" content="A friendly field guide to your rights under the UN Convention on the Rights of the Child. For ages 8 to 18." />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%231c1917'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Nunito,system-ui,sans-serif' font-weight='900' font-size='34' fill='%23fcd34d'%3E42%3C/text%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Crect width='180' height='180' rx='28' fill='%231c1917'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Nunito,system-ui,sans-serif' font-weight='900' font-size='96' fill='%23fcd34d'%3E42%3C/text%3E%3C/svg%3E" />
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Nunito', ui-sans-serif, system-ui, sans-serif; }
+  .shadow-hard { box-shadow: 6px 6px 0 0 #1c1917; }
+  .shadow-hard-sm { box-shadow: 3px 3px 0 0 #1c1917; }
+  .shadow-hard-md { box-shadow: 5px 5px 0 0 #1c1917; }
+  .shadow-hard-colored-rose { box-shadow: 6px 6px 0 0 #e11d48; }
+  .shadow-hard-colored-sky { box-shadow: 6px 6px 0 0 #0284c7; }
+  .shadow-hard-colored-emerald { box-shadow: 6px 6px 0 0 #059669; }
+  .paper-bg {
+    background-color: #fef3c7;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(120,80,40,0.08) 0, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(120,80,40,0.08) 0, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(120,80,40,0.04) 0, transparent 60%);
+  }
+  @keyframes diceSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  .dice-rolling { animation: diceSpin 0.4s linear infinite; }
+  @keyframes gentleBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .player-piece { animation: gentleBounce 1s ease-in-out infinite; }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in { animation: fadeIn 0.3s ease both; }
+  button:disabled { cursor: not-allowed; }
+  .decoration-wavy { text-decoration: underline wavy; text-underline-offset: 4px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.15rem 0.6rem; border: 2px solid #1c1917; border-radius: 999px;
+    font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  }
+</style>
+</head>
+<body class="paper-bg min-h-screen text-stone-900">
+
+<!-- HEADER -->
+<header class="relative z-20 border-b-4 border-stone-900 bg-amber-50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap items-center justify-between gap-3">
+    <button onclick="goHome()" class="flex items-center gap-3 group">
+      <div class="w-12 h-12 bg-stone-900 text-amber-50 rounded-xl flex items-center justify-center transform -rotate-3 group-hover:rotate-3 transition-transform font-black text-lg">
+        42
+      </div>
+      <div class="text-left leading-tight">
+        <div class="font-black text-xl sm:text-2xl tracking-tight text-stone-900 leading-none">ARTICLE 42</div>
+        <div class="text-xs text-stone-600 italic mt-0.5">the right to know your rights</div>
+      </div>
+    </button>
+    <div class="flex items-center gap-2">
+      <div id="age-badge" class="hidden px-3 py-2 bg-amber-50 border-2 border-stone-900 rounded-lg font-bold text-xs tracking-widest"></div>
+      <button id="home-btn" onclick="goHome()" class="hidden px-3 py-2 bg-amber-50 border-2 border-stone-900 rounded-lg font-bold hover:bg-stone-900 hover:text-amber-50 transition-colors text-sm items-center gap-1.5">
+        ← Home
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="relative z-10 pb-16 min-h-[70vh]">
+  <div id="app-root"></div>
+</main>
+
+<footer class="relative z-10 border-t-4 border-stone-900 bg-amber-100 py-5 text-xs text-stone-700">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-wrap items-center justify-between gap-3">
+    <div>Based on the UN Convention on the Rights of the Child (1989) and UK law as of 2026.</div>
+    <div class="font-bold">Not legal advice. For serious issues, talk to a trusted adult or use the helplines in "Ask Article 42".</div>
+  </div>
+</footer>
+
+<script>
+// ============================================================================
+// DATA
+// ============================================================================
+
+// ---------- KIDS (8-12) ----------
+
+const kidsRights = [
+  { num: 2, title: "No Discrimination", text: "All rights apply to every child, no exceptions." },
+  { num: 7, title: "Your Name", text: "You have the right to a name and to belong somewhere." },
+  { num: 8, title: "Who You Are", text: "Your family, culture, and language are part of who you are." },
+  { num: 12, title: "Being Heard", text: "Your views matter in decisions that affect you." },
+  { num: 13, title: "Sharing Ideas", text: "You can share your thoughts (as long as you respect others)." },
+  { num: 14, title: "What You Believe", text: "You can believe what you believe — and change your mind when you learn more." },
+  { num: 15, title: "Meeting Others", text: "You can meet with friends and join peaceful groups." },
+  { num: 16, title: "Privacy", text: "Your private life, messages, and family are protected." },
+  { num: 19, title: "Protection from Harm", text: "You should be safe from violence, abuse, and neglect." },
+  { num: 23, title: "Extra Support", text: "If you need extra help, you have the right to get it." },
+  { num: 24, title: "Health", text: "You have the right to good food, water, and healthcare." },
+  { num: 28, title: "Education", text: "You have the right to learn and go to school." },
+  { num: 31, title: "Rest & Play", text: "You have the right to relax, play, and enjoy culture." },
+  { num: 42, title: "Knowing Your Rights", text: "Grown-ups have to tell you what your rights are. That's the deal." },
+];
+
+const boardTiles = [
+  { id: 0, type: "start", label: "Start" },
+  { id: 1, type: "right", title: "Article 19", text: "You have the right to be protected from harm.", responsibility: "Responsibility: Look out for friends who might be hurting." },
+  { id: 2, type: "question", q: "Which right says every child deserves a name and nationality?", options: ["Article 7 — Identity", "Article 31 — Play", "Article 24 — Health"], correct: 0 },
+  { id: 3, type: "scenario", text: "A classmate is being teased for the food they bring to school.", choices: ["Join in so you fit in", "Stand up kindly and invite them to sit with you", "Pretend you didn't see"], correct: 1, lesson: "Article 2: All children have rights regardless of background. You have a responsibility to respect others." },
+  { id: 4, type: "right", title: "Article 28", text: "You have the right to an education.", responsibility: "Responsibility: Respect others' right to learn by not disrupting class." },
+  { id: 5, type: "bonus", text: "You helped a younger student. +5 points!" },
+  { id: 6, type: "question", q: "Can adults ignore your opinion just because you're young?", options: ["Yes, adults decide everything", "No — Article 12 says your views matter", "Only on weekends"], correct: 1 },
+  { id: 7, type: "right", title: "Article 24", text: "You have the right to good health, food and clean water.", responsibility: "Responsibility: Care for your body and respect others' wellbeing." },
+  { id: 8, type: "scenario", text: "Your little brother wants to join your game but you think he'll slow it down.", choices: ["Tell him to go away", "Include him and adjust the rules", "Play somewhere he can't find you"], correct: 1, lesson: "Article 31: Every child has the right to play. With rights come responsibilities to include others." },
+  { id: 9, type: "question", q: "What does Article 31 protect?", options: ["The right to vote", "The right to rest, play and leisure", "The right to drive"], correct: 1 },
+  { id: 10, type: "right", title: "Article 15", text: "You have the right to meet with friends and join groups.", responsibility: "Responsibility: Make sure no one is left out or excluded." },
+  { id: 11, type: "skip", text: "A tricky situation! Skip a turn to think it through." },
+  { id: 12, type: "question", q: "Which right protects your private letters, messages and diary?", options: ["Article 16 — Privacy", "Article 42 — Knowing your rights", "Article 6 — Life"], correct: 0 },
+  { id: 13, type: "right", title: "Article 13", text: "You have the right to share your ideas and opinions.", responsibility: "Responsibility: Listen when others share theirs." },
+  { id: 14, type: "scenario", text: "You see someone posting mean things about a classmate online.", choices: ["Like the post to fit in", "Report it and check on your classmate", "Do nothing — it's not your problem"], correct: 1, lesson: "Article 19: Protection from harm includes online. Your responsibility is to help keep others safe." },
+  { id: 15, type: "question", q: "True or false: Rights only belong to children who 'earn' them.", options: ["True", "False — every child has rights", "Only in some countries"], correct: 1 },
+  { id: 16, type: "bonus", text: "You listened carefully to someone's opinion. +5 points!" },
+  { id: 17, type: "right", title: "Article 12", text: "You have the right to be heard in decisions that affect you.", responsibility: "Responsibility: Let others be heard too — even if you disagree." },
+  { id: 18, type: "scenario", text: "Your parents are making a decision about changing schools without asking you.", choices: ["Refuse to talk to them", "Ask calmly to share how you feel", "Run away from the problem"], correct: 1, lesson: "Article 12: You have the right to be heard. Speaking respectfully is the responsibility that makes it work." },
+  { id: 19, type: "question", q: "How many articles are in the UN Convention on the Rights of the Child?", options: ["12", "54", "100"], correct: 1 },
+  { id: 20, type: "finish", label: "Finish!" },
+];
+
+const kidsScenarios = [
+  {
+    title: "The Group Chat",
+    text: "Someone adds you to a group chat where people are spreading a nasty rumour about a classmate. Everyone seems to be joining in.",
+    choices: [
+      { text: "Join in — you don't want to be next", outcome: "bad", feedback: "This reinforces harm. Article 19 says every child deserves protection from violence and abuse, and that includes words online." },
+      { text: "Leave the chat quietly and say nothing", outcome: "ok", feedback: "Leaving protects you, but the rumour keeps spreading. Your responsibility to others means doing a bit more when it's safe to." },
+      { text: "Leave the chat and tell a trusted adult", outcome: "good", feedback: "You used your right to safety (Art. 19) AND took responsibility for a classmate's wellbeing. Telling an adult isn't 'snitching' — it's care." },
+    ],
+  },
+  {
+    title: "The Family Decision",
+    text: "Your family is planning a big move to another city. You overhear them deciding without asking what you think.",
+    choices: [
+      { text: "Shout that it's unfair and slam a door", outcome: "bad", feedback: "Your feelings are valid, but Article 12 works best when paired with the responsibility to communicate calmly so you're actually heard." },
+      { text: "Say nothing because kids don't get a say", outcome: "bad", feedback: "Article 12 says your views DO matter on decisions that affect you. Staying silent means the adults miss important information." },
+      { text: "Ask for a family chat to share your worries and questions", outcome: "good", feedback: "Perfect. Article 12: you have the right to be heard. Asking respectfully makes it much more likely to work." },
+    ],
+  },
+  {
+    title: "The Different Classmate",
+    text: "A new student joins your class. They wear different clothes, speak another language at home, and eat food some kids are making fun of.",
+    choices: [
+      { text: "Laugh along so you're not the target", outcome: "bad", feedback: "Article 2 says every child has rights regardless of where they're from, their religion, or anything else. Laughing along breaks that." },
+      { text: "Stay out of it completely", outcome: "ok", feedback: "Not joining in is a start — but Article 2 is also about active respect. A small kind act would go a long way." },
+      { text: "Sit with them at lunch and ask about their food", outcome: "good", feedback: "You're showing Article 2 in action. Curiosity and kindness are the responsibilities that bring rights to life." },
+    ],
+  },
+  {
+    title: "The Homework Trap",
+    text: "Your friend wants to copy your homework. They say they'll be your friend forever if you let them.",
+    choices: [
+      { text: "Let them copy — that's what friends do", outcome: "bad", feedback: "Copying doesn't help them learn. Article 28 is about YOUR right to education — and theirs. A good friend protects that." },
+      { text: "Say no and offer to explain it instead", outcome: "good", feedback: "Brilliant. You're protecting their right to learn (Art. 28) while still being a good friend. That's responsibility in action." },
+      { text: "Say no and walk away annoyed", outcome: "ok", feedback: "Saying no was right — but offering help turns it from a wall into a bridge." },
+    ],
+  },
+  {
+    title: "The Private Diary",
+    text: "You find your older sister's diary open on the table. No one is around.",
+    choices: [
+      { text: "Read it — it was right there!", outcome: "bad", feedback: "Article 16 protects everyone's privacy, including siblings. 'It was there' isn't permission." },
+      { text: "Close it and leave it alone", outcome: "good", feedback: "You respected Article 16 — the right to privacy. That's the responsibility that comes with wanting your own privacy respected." },
+      { text: "Take a quick peek, then close it", outcome: "bad", feedback: "A quick peek is still a privacy violation. Article 16 doesn't have a 'little bit' exception." },
+    ],
+  },
+  {
+    title: "The Tired Day",
+    text: "You've had homework, clubs, and chores every single day this week. Your parent asks you to help with one more thing and you're exhausted.",
+    choices: [
+      { text: "Shout that you never get a break", outcome: "ok", feedback: "Your feelings are real — Article 31 protects your right to rest and play. But shouting makes it harder for adults to actually hear you." },
+      { text: "Do it silently but feel awful inside", outcome: "bad", feedback: "Bottling up isn't using your right to be heard (Art. 12). Adults can't help if they don't know how you feel." },
+      { text: "Explain calmly that you're exhausted and need rest", outcome: "good", feedback: "You used Article 12 (to be heard) and Article 31 (rest) together. Speaking up kindly is the responsibility that makes rights work." },
+    ],
+  },
+  {
+    title: "The Secret That Hurts",
+    text: "Your best friend tells you something scary is happening at their house. They beg you not to tell anyone.",
+    choices: [
+      { text: "Promise to keep it secret so they trust you", outcome: "bad", feedback: "A kind instinct, but Article 19 says no child should face harm alone. Some promises aren't ours to keep — especially when a friend is in danger." },
+      { text: "Tell a trusted adult even though you promised not to", outcome: "good", feedback: "This is the hardest kind of brave. You kept Article 19 alive for your friend. A friend who's safe (even if angry) is still a friend." },
+      { text: "Wait and see if it happens again before doing anything", outcome: "bad", feedback: "Waiting can mean more harm. Telling an adult today doesn't mean everything has to change instantly — it just means your friend stops facing it alone." },
+    ],
+  },
+  {
+    title: "The Wheelchair Joke",
+    text: "A few kids at lunch are imitating a classmate who uses a wheelchair and laughing about how they move.",
+    choices: [
+      { text: "Laugh so they don't turn on you next", outcome: "bad", feedback: "Article 23 protects children with disabilities from exactly this. Laughing along tells them their rights don't count here." },
+      { text: "Say 'that's not funny' and change the subject", outcome: "good", feedback: "One sentence. Huge difference. Article 23 and Article 2 working together — and you made it safer for your classmate to be in that room." },
+      { text: "Stay quiet and hope someone else speaks up", outcome: "ok", feedback: "Understandable — speaking up is scary. But bullying survives on quiet. Checking in on your classmate afterwards is another way." },
+    ],
+  },
+  {
+    title: "The New Screen Time Rule",
+    text: "Your parent announces a new rule with no warning: no devices after 6pm, every day. You didn't get to say anything about it.",
+    choices: [
+      { text: "Sulk for a week and refuse to speak", outcome: "bad", feedback: "Your feelings are real (Article 12), but silence means they can't understand what's actually going on for you." },
+      { text: "Ask calmly to sit down and share how it'll affect school and friends", outcome: "good", feedback: "That's Article 12 in action. You can't always change the rule, but you have the right to be heard — and calm questions are what make that work." },
+      { text: "Sneak your device after 6pm so they don't notice", outcome: "bad", feedback: "Understandable instinct, but it makes the trust problem worse. If they find out (they usually do), the next rule will be stricter." },
+    ],
+  },
+  {
+    title: "The Older Kids",
+    text: "Some older kids say you need to steal a small thing from a shop to 'prove yourself' before you can hang out with them.",
+    choices: [
+      { text: "Just do it — it's only small", outcome: "bad", feedback: "Not only is this against the law, 'friends' who demand you break the law to be near them aren't friends. Article 19 is about protection from people who exploit you, too." },
+      { text: "Say no, even if it means they don't let you hang out", outcome: "good", feedback: "Your right to safety (Art. 19) and your right to be yourself (Art. 7) are bigger than fitting in with a group that treats you like a test." },
+      { text: "Pretend you will, then avoid them forever", outcome: "ok", feedback: "Safer than going through with it, but telling a trusted adult is stronger — these kids are likely pressuring others too." },
+    ],
+  },
+];
+
+// ---------- TEENS (13-18) ----------
+
+const teensRights = [
+  {
+    article: "Article 12", category: "Your Voice",
+    headline: "Your opinion legally matters.",
+    body: "On decisions that affect you — school, medical treatment, family court — you have the right to be heard, and for your view to be taken seriously in proportion to your age and maturity.",
+    reallife: "Courts in the UK routinely ask teenagers what they think in custody cases. Doctors from about age 12-13 assess your capacity to make your own medical decisions (this is called 'Gillick competence').",
+    responsibility: "This right works best when you express yourself clearly and respectfully — not because you have to earn it, but because it's the thing that actually gets adults listening.",
+  },
+  {
+    article: "Article 16", category: "Privacy",
+    headline: "Your private life is yours.",
+    body: "Your correspondence, family life, and home are protected from 'arbitrary interference.' That includes your phone, your DMs, your journal, and your body.",
+    reallife: "Parents can set reasonable household rules about devices. Schools can search bags for prohibited items but need a strong reason to search your phone. Nobody — family, friends, partners — is entitled to your passwords or location.",
+    responsibility: "Extend the same respect to others. Screenshotting private messages to share them, or pressuring a partner for their passwords, violates their Article 16 right too.",
+  },
+  {
+    article: "Article 13", category: "Expression",
+    headline: "You can share what you think.",
+    body: "You have the right to seek, receive, and share information and ideas — online and offline. This includes creative work, political views, and asking hard questions.",
+    reallife: "You can run a blog, post your art, speak at school, or question things you're told. This right has limits: hate speech, harassment, and inciting violence aren't protected anywhere.",
+    responsibility: "Free expression comes with the responsibility not to spread deliberate lies about real people, or use your platform to harm others.",
+  },
+  {
+    article: "Article 14", category: "Belief",
+    headline: "Your beliefs are yours to hold — and to change.",
+    body: "You have the right to freedom of thought, conscience and religion. You can believe what you believe, question what you were taught, and shift as you learn more. Nobody — family, friends, partners, institutions — can force a belief on you.",
+    reallife: "This covers religious practice (or choosing none), political views, and the right to ask hard questions about what you've been told. In the UK at 16+ your religious choice is legally your own in most practical contexts. Coercing someone to leave or join a religion, or using 'faith' to justify harm, violates this right.",
+    responsibility: "The flip side is taking other people's beliefs seriously — even when you strongly disagree. Disagreement isn't the same as dismissal.",
+  },
+  {
+    article: "Article 19", category: "Safety",
+    headline: "Nobody has the right to harm you.",
+    body: "Protection from all forms of physical and mental violence, injury, abuse, neglect, and exploitation — from anyone, including family members, partners, and people online.",
+    reallife: "This includes emotional abuse, coercive control, grooming, and image-based abuse (sharing intimate images without consent is a crime in the UK for people of any age). 'They didn't mean it' isn't a defence.",
+    responsibility: "If you witness harm happening to someone else — online or off — speaking up to a trusted adult isn't snitching, it's the thing this right depends on.",
+  },
+  {
+    article: "Article 23", category: "Access",
+    headline: "Access isn't a favour.",
+    body: "Young people with disabilities have the right to live full, active lives with the support needed to do so — education, healthcare, inclusion, and being consulted on decisions about them.",
+    reallife: "Under the Equality Act 2010, schools, workplaces and services have a legal duty to make 'reasonable adjustments' — it's a requirement, not a kindness. That includes accessible buildings, adapted materials, and support plans (like EHCPs in England). 'Reasonable' means doing the hard work, not picking the easy path.",
+    responsibility: "If you're not disabled: notice who gets left out by default, and push for inclusion as baseline rather than afterthought. 'We'd have included them if they'd asked' is not inclusion.",
+  },
+  {
+    article: "Article 24", category: "Health",
+    headline: "Your mental health counts as health.",
+    body: "You have the right to the highest attainable standard of physical and mental health, including access to healthcare and information about your body.",
+    reallife: "In the UK, you can usually see a GP confidentially from age 13+, access sexual health services, and request mental health support without parental permission in many cases. Your GP can't tell your parents what you discuss.",
+    responsibility: "Looking after your health also means paying attention to friends who are struggling. You don't have to fix them — but pointing them toward help matters.",
+  },
+  {
+    article: "Article 2", category: "Equality",
+    headline: "Discrimination isn't your problem to fix — but you can name it.",
+    body: "All rights apply to every young person regardless of race, gender, sexuality, religion, disability, background, or anything else. Full stop.",
+    reallife: "If you're being treated differently at school, work, or in services because of who you are — that's discrimination, and it's often illegal. The Equality Act 2010 protects you in the UK.",
+    responsibility: "Calling out discrimination when it happens to others — especially when it's not aimed at you — is one of the most powerful things a young person can do.",
+  },
+  {
+    article: "Article 7", category: "Identity",
+    headline: "Who you are is legally yours.",
+    body: "You have the right to a name, a nationality, to know your parents as far as possible, and to preserve your identity. Identity is bigger than a birth certificate — it includes culture, language, family history, and how you understand yourself.",
+    reallife: "This covers the right to documentation (passports, birth records), to not have your identity forcibly changed, and to recognition of who you are. It intersects with gender, faith, and belonging — and it's why adoption, care, and migration systems are legally required to preserve a young person's identity wherever possible.",
+    responsibility: "Taking identity seriously in others means respecting names, pronouns, cultural practices, and histories — even the ones you don't fully understand yet.",
+  },
+  {
+    article: "Article 32", category: "Work",
+    headline: "Work has rules, and they exist to protect you.",
+    body: "You have the right to be protected from work that's harmful to your health, education, or development — and from economic exploitation.",
+    reallife: "In the UK: you can work from 13 (with limits), get the teenage minimum wage from 16, and are legally entitled to breaks. 'Training wages' below minimum wage, unpaid trials, and jobs that interfere with school are usually illegal.",
+    responsibility: "Know what you're entitled to before accepting any job. A 'great opportunity' that underpays you is still underpaying you.",
+  },
+  {
+    article: "Article 31", category: "Rest",
+    headline: "Rest is a right, not a reward.",
+    body: "You have the right to rest, leisure, play, and cultural activity. Adults sometimes forget this one applies all the way to 18.",
+    reallife: "Being constantly scheduled, pressured into every available hour of study or activity, or made to feel guilty for resting isn't 'just life.' Burnout in teenagers is a genuine health issue.",
+    responsibility: "Protecting your rest means learning to say no — and also not guilt-tripping friends for theirs.",
+  },
+  {
+    article: "Article 42", category: "Knowing",
+    headline: "Adults owe you the information.",
+    body: "The UNCRC itself says governments have to actively make rights known to children and adults alike. You being informed isn't a bonus — it's legally part of the treaty.",
+    reallife: "If you're in care, in school, in the justice system, or receiving healthcare, you're entitled to age-appropriate information about what your rights are in that setting. 'Nobody told me' is a structural failure, not your mistake.",
+    responsibility: "Pass it on. Tell the next young person. Most people your age don't know the basics — being someone who does is already doing the work of Article 42.",
+  },
+];
+
+const teensScenarios = [
+  {
+    category: "Digital Life", tag: "Consent · Privacy",
+    title: "The Shared Screenshot",
+    text: "Your group chat is gossiping about someone you all know. One friend says something genuinely cruel about them. Another friend screenshots it and sends it to the person 'so they know who their real friends are.' Now that person is devastated, and the friend who got screenshotted is furious at you all.",
+    choices: [
+      { text: "Side with the screenshotter — the person deserved to know", outcome: "partial", feedback: "The person did deserve to know, but screenshotting a private chat violates Article 16 (privacy) for everyone in it. Two wrongs here: cruel gossip AND non-consensual sharing. The right move is confronting the cruelty directly, not leaking the chat." },
+      { text: "Side with the screenshotter publicly, but privately message them that next time you'd rather just confront the issue", outcome: "good", feedback: "You're backing up your friend who did the ethically harder thing (telling the victim), while naming that the method had a cost. That's actually how complicated loyalty works. Article 19 (protection from harm) and Article 16 (privacy) were both in play — you're acknowledging both." },
+      { text: "Stay out of it — not your drama", outcome: "bad", feedback: "You were in the chat where someone was torn apart. Staying silent is a choice with consequences. You don't have to pick a side publicly, but checking in on the person who got hurt is the bare minimum." },
+      { text: "Demand the screenshotter apologise to the whole group", outcome: "bad", feedback: "This protects the people doing the gossiping while punishing the one who tried (messily) to stop it. It sends the signal that privacy matters more than cruelty, which is backwards." },
+    ],
+  },
+  {
+    category: "Consent", tag: "Pressure · Voice",
+    title: "The 'Just One Photo'",
+    text: "You've been talking to someone online for a few weeks. You really like them. They send you a revealing photo and ask for one back. When you hesitate, they say they've trusted you with theirs and it would 'mean a lot.' You feel the weight of that.",
+    choices: [
+      { text: "Send something — relationships involve compromise", outcome: "bad", feedback: "Consent obtained through guilt or pressure isn't really consent. This is a recognised pattern called coercion. Also: in the UK, creating or sharing intimate images of anyone under 18 — including yourself — is technically illegal under child protection law. This law exists to protect you, even when it feels the opposite." },
+      { text: "Send a non-revealing photo instead, and explain you're not comfortable going further", outcome: "good", feedback: "You're using Article 12 (your voice) and Article 16 (your body, your privacy) together. A partner who respects you will accept this. A partner who doesn't is showing you who they are — which is useful information, even if it hurts." },
+      { text: "Say no clearly and end the conversation", outcome: "good", feedback: "Completely valid. You don't owe anyone an explanation for saying no to something intimate. Consent is active and ongoing — 'I shared mine' is not a binding contract on you." },
+      { text: "Ask a trusted adult before doing anything", outcome: "good", feedback: "Not embarrassing — smart. The fact that you felt pressure is itself important information. If an adult you trust says 'this feels off to me,' listen to that. Grooming often looks exactly like this: building trust, then asking for something that crosses a line." },
+    ],
+  },
+  {
+    category: "Work", tag: "Exploitation · Rights",
+    title: "The Trial Shift",
+    text: "A local café offers you a weekend job. They ask you to do a four-hour 'trial shift' — unpaid, to see if you fit in. After the shift, they say 'we'll let you know' and never call back. A friend tells you this is the third time this has happened with this place.",
+    choices: [
+      { text: "Chalk it up to experience — lots of places do this", outcome: "bad", feedback: "Lots of places do it, and in the UK it's mostly illegal. If you're doing productive work for a business, you're almost always entitled to at least the minimum wage, even during a 'trial.' A café is using teenagers as free labour and that's exploitation under Article 32." },
+      { text: "Report the café to ACAS or HMRC's minimum wage enforcement team", outcome: "good", feedback: "This is the grown-up move. You can report anonymously. HMRC actively investigates wage theft, and cafés using serial free-trial-shift tactics get fined. You're not being petty — you're protecting the next teenager." },
+      { text: "Post about it on social media to warn others", outcome: "partial", feedback: "Useful for warning peers, but it doesn't actually stop the business from doing it to the next person, and if you name them incorrectly you could be sued for defamation. Reporting is more effective. Do both if you want." },
+      { text: "Go back and politely ask to be paid for the trial shift", outcome: "good", feedback: "Also valid and often effective — most businesses back down when challenged because they know they're in a grey area. Bring it up in writing (email or text) so you have a record." },
+    ],
+  },
+  {
+    category: "Mental Health", tag: "Disclosure · Friends",
+    title: "The Text You Didn't Expect",
+    text: "It's 1am. A close friend texts you: 'I don't think I want to be here anymore.' You don't know if they mean their town, their school, or their life. They've been distant lately.",
+    choices: [
+      { text: "Ask directly: 'Do you mean you're thinking about suicide?'", outcome: "good", feedback: "Research consistently shows that asking directly does NOT plant the idea and often brings relief — the person feels seen. Stay with them. Listen more than you talk. Don't promise to keep it secret if they're in danger." },
+      { text: "Reassure them everything will be fine", outcome: "bad", feedback: "Well-meaning, but it can shut the conversation down. They reached out because things aren't fine. 'I'm here. Tell me what's going on' opens the door; 'it'll be okay' closes it." },
+      { text: "Tell a trusted adult right away, even if your friend asked you not to", outcome: "good", feedback: "When someone's safety is at stake, the 'don't tell anyone' rule has to break. A friend who's angry you told someone is still a friend who's alive. You are not a qualified mental health responder — that's not failure, it's reality. Get them to adults who can help." },
+      { text: "Wait until morning to respond in case they're just being dramatic", outcome: "bad", feedback: "Treat every message like this as real. The cost of responding to a 'dramatic' friend at 1am is a lost hour of sleep. The cost of not responding to a real one is unthinkable." },
+    ],
+  },
+  {
+    category: "Discrimination", tag: "Equality · Action",
+    title: "The Teacher's Comment",
+    text: "A teacher makes a comment in class that's openly racist about a country one of your classmates is from. The classmate goes quiet. Other students laugh uncomfortably. The lesson moves on.",
+    choices: [
+      { text: "Say something in the moment — challenge the comment", outcome: "good", feedback: "Hard to do, but powerful. You don't have to be confrontational — 'I don't think that's fair, Sir' is enough. Article 2 (no discrimination) is only as strong as the people willing to name it when it happens. Your classmate will remember." },
+      { text: "Check on your classmate after class", outcome: "good", feedback: "Essential, whether or not you spoke up in class. Being targeted and then having no one acknowledge it is often the worst part. 'That wasn't okay and I'm sorry that happened' means a lot." },
+      { text: "Report it to a head of year or safeguarding lead", outcome: "good", feedback: "This is the move that creates real consequences. Schools have legal duties under the Equality Act 2010 — racist comments from staff are a serious safeguarding issue. Write it down with date, time, and exact wording before you forget." },
+      { text: "Do nothing — it's not your fight", outcome: "bad", feedback: "Discrimination survives on bystanders. Article 2 applies to every young person, but it depends on people — including people it isn't aimed at — refusing to treat it as normal. If it happens again tomorrow and you said nothing, you're part of why." },
+    ],
+  },
+  {
+    category: "Digital Life", tag: "Privacy · Family",
+    title: "The Parental Monitoring App",
+    text: "Your parent installs a monitoring app on your phone that can read every message, track your location 24/7, and log which apps you open. They say 'if you're not doing anything wrong, you have nothing to hide.'",
+    choices: [
+      { text: "Accept it — they're your parents, they have the right", outcome: "partial", feedback: "Parents have a duty of care, but Article 16 still applies to you. Total surveillance without cause goes beyond reasonable oversight and can damage the trust needed for you to actually come to them when something's wrong. It's not all-or-nothing — there's a real conversation to be had here." },
+      { text: "Ask for a conversation about what they're actually worried about", outcome: "good", feedback: "Strongest move. Monitoring is often a symptom of parental anxiety, not a considered policy. Asking 'what specifically are you worried about?' can open up a more proportionate solution: maybe they want location for safety (fair), not DMs (not fair)." },
+      { text: "Secretly install a second messaging app they don't know about", outcome: "bad", feedback: "Understandable instinct, but it escalates the trust problem rather than solving it. When they find it (and they probably will), you'll lose the Article 16 argument and a lot more." },
+      { text: "Talk to another trusted adult — a teacher, aunt, older cousin", outcome: "good", feedback: "Sometimes parents listen to other adults in a way they can't hear their own kid. An aunt or pastoral teacher saying 'that level of surveillance is actually harmful' carries different weight." },
+    ],
+  },
+  {
+    category: "Relationships", tag: "Coercion · Privacy",
+    title: "The Partner Password",
+    text: "Your partner asks for your phone passcode. They say that in a real relationship you shouldn't have anything to hide from each other, and they'll give you theirs too. Something about it feels off but you can't quite name it.",
+    choices: [
+      { text: "Hand it over — it shows you trust them", outcome: "bad", feedback: "Trust is not surveillance access. Article 16 (privacy) still applies inside relationships. Demanding passwords is a recognised early sign of coercive control — a pattern, not a one-off. The feeling of 'something's off' is information." },
+      { text: "Say no, and say it calmly without apologising", outcome: "good", feedback: "'No' is a complete sentence. A partner who respects you will not keep pushing. A partner who does keep pushing is showing you who they are. Article 16 is yours whether you're single or not." },
+      { text: "Offer a compromise — 'I'll show you specific things if you're worried'", outcome: "partial", feedback: "Kind-hearted, but it accepts the premise that you need to prove innocence. You don't. The right conversation is 'what are you actually worried about?' — not 'which parts of my privacy would you like to audit?'" },
+      { text: "Talk to someone outside the relationship about whether this is normal", outcome: "good", feedback: "Smart. Friends, family, a youth worker, or The Mix can help you see clearly — partners pushing these requests usually also isolate you from perspectives that might name it. Getting outside input protects you." },
+    ],
+  },
+  {
+    category: "Police", tag: "Stop & Search · Rights",
+    title: "The Walk Home",
+    text: "You're walking home after seeing friends. Two police officers stop you and say they want to search you. You're not sure what you've done, what you have to let them do, or what you should say.",
+    choices: [
+      { text: "Say nothing and refuse to cooperate at all", outcome: "bad", feedback: "You have rights here, but outright refusal can escalate things. You're allowed to ask what's happening and why — calmly and respectfully — without being obstructive. Silence alone isn't your best tool." },
+      { text: "Ask: 'What's your name and station, and what are the grounds for the search?'", outcome: "good", feedback: "These are your legal rights. In the UK, stop-and-search (under Section 1 PACE) requires 'reasonable grounds.' Officers must give you their name, station, the reason, and the power they're using. You're entitled to a written record of the stop afterwards." },
+      { text: "Argue loudly and film them as they search", outcome: "partial", feedback: "You can film police in public — that's legal. But arguing loudly while being searched often makes things worse on the night, even if you're right. Film quietly and save the anger for a formal complaint afterwards (it carries more weight in writing)." },
+      { text: "Comply calmly and deal with any complaint after", outcome: "good", feedback: "Often the safest approach in the moment. Note names, numbers, what was said. You can make a formal complaint to the IOPC or the force's professional standards later — and that's where unfair stops actually get challenged." },
+    ],
+  },
+  {
+    category: "Identity", tag: "Belief · Family",
+    title: "The Coming Out Conversation",
+    text: "You're thinking about coming out to your family. You're pretty sure most of them will be okay. One relative you live with almost certainly won't — they've said some pretty harsh things in the past. You feel like you can't keep pretending.",
+    choices: [
+      { text: "Come out to everyone at once to get it over with", outcome: "partial", feedback: "Understandable instinct, but you get to control this. Article 7 (identity) is yours — how and when to share it is part of that right. Staggered disclosure to safer people first is completely legitimate, not cowardice." },
+      { text: "Come out to the safest people first, build support, then decide the rest", outcome: "good", feedback: "This is what most LGBTQ+ charities actually recommend. You're not obliged to risk your safety or housing for anyone's sense of honesty. Article 7 and Article 19 work together — identity and safety are not in conflict, they're paired." },
+      { text: "Wait until you're financially independent before telling anyone", outcome: "partial", feedback: "Sometimes the right call if home isn't safe. But living fully hidden has real mental-health costs, and support exists. Talking to Stonewall, LGBT Foundation or The Proud Trust can help you plan — including for worst-case scenarios." },
+      { text: "Talk to a helpline or charity first to plan the conversation", outcome: "good", feedback: "Smart and strong. Switchboard (0800 0119 100) and LGBT Foundation are specifically for this — they can help you think through safety, timing, words, and what to do if the worst relative reacts badly." },
+    ],
+  },
+  {
+    category: "Peer Pressure", tag: "Consent · Risk",
+    title: "The Fake ID",
+    text: "Your friend group has fake IDs and wants to go to a club. Yours just arrived in the post. You're 16. They say everyone does it and it's basically legal because 'it's only lying to a bouncer.'",
+    choices: [
+      { text: "Go — everyone else is", outcome: "bad", feedback: "Using a fake ID is actually a criminal offence in the UK (possession of false identity document; fraud). Clubs that get caught serving underage drinkers lose their licence — which is why staff take it seriously. The 'everyone does it' line underestimates the consequences." },
+      { text: "Go without the fake ID and sit outside while they go in", outcome: "bad", feedback: "Please don't. Waiting alone outside a club at night is a genuinely risky way to spend the evening. If you're not going in, go home or go somewhere else — don't compromise your safety to keep the group together." },
+      { text: "Say you don't want the risk, and suggest something else you can all do", outcome: "good", feedback: "Article 12 (your voice) plus genuinely caring about your own Article 19 (safety). Real friends will adjust. Friends who only like you when you take legal risks for them are a signal, not a stable crowd." },
+      { text: "Tell your parent or an older sibling before the plan goes ahead", outcome: "good", feedback: "Not snitching — including yourself in the loop of people who know what's happening keeps you safer. Adults usually don't react as badly as you fear; they just want you alive and not on a police database at 16." },
+    ],
+  },
+];
+
+const legalQuiz = [
+  {
+    q: "Can your school search your phone without your permission?",
+    short: "Phone searches",
+    options: [
+      { label: "Yes, anytime — you're on school property", correct: false },
+      { label: "Only with a strong reason and usually with you present", correct: true },
+      { label: "Only with your parents' permission", correct: false },
+      { label: "No, never — phones are private", correct: false },
+    ],
+    explanation: "In the UK, schools can search if they have reasonable grounds to believe you have something prohibited or that evidence of a crime is on the device. They generally can't do random fishing expeditions, and they have to follow their own search policies. Ask to see the policy if it happens to you.",
+  },
+  {
+    q: "Can a UK employer pay you less than minimum wage because you're 16?",
+    short: "Wages at 16",
+    options: [
+      { label: "Yes, teenagers have their own minimum wage", correct: true },
+      { label: "No, minimum wage is the same for everyone", correct: false },
+      { label: "Only if you agree to it in writing", correct: false },
+      { label: "Only during training", correct: false },
+    ],
+    explanation: "The UK has age-banded minimum wages: under 18, 18-20, and 21+. So 'less than the adult minimum' is legal. But 'less than the teenager minimum' is wage theft. Rates go up every April — check gov.uk for the current numbers.",
+  },
+  {
+    q: "Can your parents legally read your text messages?",
+    short: "Parents & messages",
+    options: [
+      { label: "Yes, until you're 18", correct: false },
+      { label: "No, never — it's illegal", correct: false },
+      { label: "It's complicated — legally grey, ethically a judgement call", correct: true },
+      { label: "Only if you give them your passcode", correct: false },
+    ],
+    explanation: "There's no specific UK law making it illegal for a parent to check a minor's phone. But Article 16 of the UNCRC gives you privacy rights, and total surveillance can cross into controlling behaviour. In practice: parents generally can, but shouldn't without cause, and it's a conversation worth having.",
+  },
+  {
+    q: "Can you see a GP without a parent present or knowing?",
+    short: "Confidential GP",
+    options: [
+      { label: "Not until you're 18", correct: false },
+      { label: "Yes, from age 16", correct: false },
+      { label: "Yes, if the GP judges you competent to understand (usually from ~13)", correct: true },
+      { label: "Only for mental health, not physical", correct: false },
+    ],
+    explanation: "'Gillick competence' is the test. If a doctor judges you mature enough to understand the treatment and implications, you can consent to most things confidentially — contraception, mental health, most physical issues. Your GP can't tell your parents what you discussed. Important exception: if they believe you're at serious risk, they may have to break confidentiality.",
+  },
+  {
+    q: "Is it illegal for someone your age to send a nude photo of themselves?",
+    short: "Sending nudes",
+    options: [
+      { label: "No, it's your body", correct: false },
+      { label: "Technically yes, if under 18 — the law is about protection, not prosecution", correct: true },
+      { label: "Only if sent to an adult", correct: false },
+      { label: "Only if it's shared further", correct: false },
+    ],
+    explanation: "Under UK law, any intimate image of a person under 18 is classified as child sexual abuse material — including ones you take of yourself. Police very rarely prosecute teenagers for self-images, but the law exists because these images can be weaponised later. The better question isn't 'is it legal' but 'who else might see this, and do I trust them forever?'",
+  },
+  {
+    q: "Can you be fired for refusing to work on a school day?",
+    short: "Work & school",
+    options: [
+      { label: "Yes, a job is a job", correct: false },
+      { label: "No — if you're school-age, you can't legally work hours that conflict with school", correct: true },
+      { label: "Only if you're under 14", correct: false },
+      { label: "Only if your parents agree", correct: false },
+    ],
+    explanation: "Until you're past compulsory school age (end of Year 11 in England), there are legal limits: no work during school hours, no more than 2 hours on a school day, and specific rules on early mornings and late nights. An employer who pressures you to skip school or work illegal hours is breaking the law, not you.",
+  },
+  {
+    q: "Can your parents stop you attending a religious service you want to attend?",
+    short: "Religious choice",
+    options: [
+      { label: "Yes, until you're 18", correct: false },
+      { label: "No, from age 16 in most UK contexts your religious choice is yours", correct: true },
+      { label: "Only if they share the religion", correct: false },
+      { label: "No, from birth", correct: false },
+    ],
+    explanation: "Article 14 of the UNCRC gives you freedom of religion, and this strengthens as you mature. Under 16, parents generally have authority to decide. At 16+, your choice is legally your own in most practical contexts in the UK. Article 12 (being heard) also means your view should be weighted well before 16.",
+  },
+  {
+    q: "Can someone be prosecuted for non-consensually sharing an intimate image of you?",
+    short: "Image-based abuse",
+    options: [
+      { label: "Only if you're under 18", correct: false },
+      { label: "Yes — it's a specific criminal offence in the UK for any age", correct: true },
+      { label: "Only if money changes hands", correct: false },
+      { label: "No, but you can sue in civil court", correct: false },
+    ],
+    explanation: "Sharing an intimate image without consent is a criminal offence in England and Wales (updated under the Online Safety Act 2023). Threatening to share is also a specific crime. If this happens to you: save evidence, don't engage with the person, report to the Revenge Porn Helpline (or the Report Remove tool for under-18s) and the police.",
+  },
+  {
+    q: "Can you vote in a UK general election at 16?",
+    short: "Voting age",
+    options: [
+      { label: "Yes, from 16 nationwide", correct: false },
+      { label: "No — 18 for UK general elections. 16 for Scottish and Welsh elections.", correct: true },
+      { label: "Only with parental consent", correct: false },
+      { label: "Only in local elections", correct: false },
+    ],
+    explanation: "UK-wide general elections: 18. Scottish Parliament and Senedd Cymru (Wales): 16. You can register to vote from 16 in England though — so you're ready the moment you turn 18. Campaigning, attending rallies, joining political parties — those don't have an age limit at all.",
+  },
+  {
+    q: "You're 17. With your parent's consent, can you legally get a tattoo?",
+    short: "Tattoos at 17",
+    options: [
+      { label: "Yes, with written consent", correct: false },
+      { label: "No — 18 in the UK regardless of consent", correct: true },
+      { label: "Yes if done in a licensed studio", correct: false },
+      { label: "Only for medical tattoos", correct: false },
+    ],
+    explanation: "It's a criminal offence for a tattooist to tattoo someone under 18 in the UK — even with parental consent. (There's a narrow medical exception.) Studios who do it anyway are breaking the law and usually lose their licence. Piercings are more complicated and vary by local council.",
+  },
+  {
+    q: "Can police stop and search you without any reason at all?",
+    short: "Stop & search",
+    options: [
+      { label: "Yes, anywhere, anytime", correct: false },
+      { label: "No — they need 'reasonable grounds' (with narrow exceptions)", correct: true },
+      { label: "Only if you're in a group", correct: false },
+      { label: "Only if you're a driver", correct: false },
+    ],
+    explanation: "Under Section 1 PACE, police need reasonable grounds to search you for specific items. The exception is Section 60 — a senior officer can authorise suspicionless searches in a specific area for a limited time if there's serious violence expected. Always: officers must give their name, station, reason, and the legal power used — and you're entitled to a written record.",
+  },
+  {
+    q: "Do you have to give police your name if they stop you?",
+    short: "Right to silence",
+    options: [
+      { label: "Yes, always and immediately", correct: false },
+      { label: "No, never", correct: false },
+      { label: "It depends — required for specific offences, driving, or if you're being arrested", correct: true },
+      { label: "Only with a parent present", correct: false },
+    ],
+    explanation: "If you're stopped while driving, you must give your name and address. If you're being arrested, they'll need your details for charging. For a random stop on the street without arrest, you aren't always legally required to — but refusing can complicate things. If you're not sure what's happening, ask 'am I being detained?' — the answer determines what applies.",
+  },
+  {
+    q: "Is it illegal to use Instagram at age 12?",
+    short: "Social media age",
+    options: [
+      { label: "Yes, it's a criminal offence", correct: false },
+      { label: "No, but it breaks the platform's terms of service (usually 13+)", correct: true },
+      { label: "Only in the UK", correct: false },
+      { label: "Yes if your parents didn't sign up for you", correct: false },
+    ],
+    explanation: "The Online Safety Act 2023 and Ofcom's codes require platforms to actually enforce their minimum ages — most set 13+ to comply with US data law (COPPA). It's not a criminal offence to be under 13 on a platform, but your account can be deleted and you lose any protections for minors under those age-rating systems. Different from the age assurance required for adult content, which is stricter.",
+  },
+  {
+    q: "Can a 17-year-old be called for jury service in the UK?",
+    short: "Jury service",
+    options: [
+      { label: "Yes, from 16", correct: false },
+      { label: "No — minimum age is 18", correct: true },
+      { label: "Only for smaller cases", correct: false },
+      { label: "Yes if you've finished school", correct: false },
+    ],
+    explanation: "Jury service in the UK starts at 18. If you're called for jury service before turning 18, or while a full-time student and it disrupts studies, you can apply to defer or be excused. But it's not something you can be called up for before 18 at all.",
+  },
+];
+
+// ---------- ASK ARTICLE 42 ----------
+
+const askTopics = [
+  {
+    id: "unsafe",
+    icon: "🛡️",
+    color: "bg-rose-200",
+    shadow: "shadow-hard-colored-rose",
+    title: "Someone's hurting me or making me feel unsafe",
+    blurb: "Bullying, physical harm, threats, pressure, grooming.",
+    articles: [
+      { num: 19, title: "Protection from Harm", text: "You have the right to be safe from violence, abuse, neglect and exploitation — from anyone, including family." },
+      { num: 34, title: "Protection from Sexual Harm", text: "You're specifically protected from sexual abuse and exploitation." },
+    ],
+    actions: [
+      "Tell a trusted adult today. Not all adults are the right ones — pick carefully, but pick.",
+      "If you are in immediate danger, call 999.",
+      "If you want to talk through it first, Childline is free, 24/7, and confidential.",
+      "Save evidence where you safely can — messages, dates, descriptions. But your safety comes first.",
+      "Abuse is never your fault. 'I deserved it' or 'I provoked it' are things you've been taught, not things that are true.",
+    ],
+    resources: [
+      { name: "Childline", detail: "0800 1111 — free, 24/7, confidential. Under 19.", url: "https://www.childline.org.uk" },
+      { name: "NSPCC", detail: "0808 800 5000 — for anyone worried about a child.", url: "https://www.nspcc.org.uk" },
+      { name: "Police (emergency)", detail: "999 — immediate danger.", url: null },
+      { name: "Police (non-emergency)", detail: "101", url: null },
+    ],
+  },
+  {
+    id: "home",
+    icon: "🏠",
+    color: "bg-sky-200",
+    shadow: "shadow-hard-colored-sky",
+    title: "I don't feel safe at home",
+    blurb: "Violence, fear, neglect, being controlled, needing somewhere to go.",
+    articles: [
+      { num: 19, title: "Protection", text: "The right to safety applies inside your family too — 'they're my parents' isn't a defence to harm." },
+      { num: 20, title: "Care When Needed", text: "If your family can't safely care for you, you have the right to alternative care that does." },
+    ],
+    actions: [
+      "You are not wrong for feeling what you feel. 'It's probably not that bad' is something your brain tells you to survive — take it seriously.",
+      "Tell someone outside the home: teacher, GP, school safeguarding lead, trusted family member, Childline.",
+      "If you run away or need somewhere to go, Runaway Helpline can help without reporting you.",
+      "If you need to leave urgently, police can help even if you're not sure it counts as an emergency.",
+      "Social services exist for this. They are not the enemy — their legal job is to keep you safe.",
+    ],
+    resources: [
+      { name: "Childline", detail: "0800 1111 — 24/7, confidential", url: "https://www.childline.org.uk" },
+      { name: "Runaway Helpline", detail: "116 000 — free, confidential, under-21s", url: "https://www.runawayhelpline.org.uk" },
+      { name: "NSPCC", detail: "0808 800 5000", url: "https://www.nspcc.org.uk" },
+      { name: "Refuge (domestic abuse)", detail: "0808 2000 247 — 24/7", url: "https://www.refuge.org.uk" },
+    ],
+  },
+  {
+    id: "control",
+    icon: "🔒",
+    color: "bg-emerald-200",
+    shadow: "shadow-hard-colored-emerald",
+    title: "My parent or carer is too controlling",
+    blurb: "Monitoring, isolating, making you feel scared to speak up.",
+    articles: [
+      { num: 16, title: "Privacy", text: "You have the right to a private life. Parents have duty of care; total surveillance goes beyond that." },
+      { num: 12, title: "Being Heard", text: "On decisions that affect you, your view should be taken seriously." },
+    ],
+    actions: [
+      "There's a difference between caring parenting (rules, curfews, asking about your day) and controlling behaviour (monitoring everything, isolating you from friends, controlling who you see or what you wear).",
+      "Try the conversation. 'What are you actually worried about?' can open things up more than 'you're controlling.'",
+      "Bring in another adult: a teacher, aunt, GP, or youth worker. Sometimes parents hear things differently from someone outside.",
+      "If control crosses into fear — you hide things for your safety — that's coercive control, which is a criminal offence in the UK.",
+      "You are not being ungrateful for wanting more autonomy as you grow up. That's healthy development.",
+    ],
+    resources: [
+      { name: "Family Lives", detail: "0808 800 2222", url: "https://www.familylives.org.uk" },
+      { name: "The Mix", detail: "0808 808 4994 — support for under-25s", url: "https://www.themix.org.uk" },
+      { name: "Childline", detail: "0800 1111", url: "https://www.childline.org.uk" },
+    ],
+  },
+  {
+    id: "mental",
+    icon: "🧠",
+    color: "bg-yellow-200",
+    shadow: "shadow-hard",
+    title: "I'm struggling with my mental health",
+    blurb: "Anxiety, low mood, self-harm, suicidal thoughts, feeling numb.",
+    articles: [
+      { num: 24, title: "Health", text: "Mental health is health. You have the right to support, information, and access to care." },
+      { num: 12, title: "Being Heard", text: "Including about your own treatment. If something isn't working, say so." },
+    ],
+    actions: [
+      "You can see a GP from around age 13 without a parent (Gillick competence). The GP generally can't tell your parents what you discussed unless they think you're at serious risk.",
+      "Tell someone today, even if it's small. 'I'm not okay and I don't know what to do' is a complete sentence and a real start.",
+      "If you are thinking about suicide or self-harm right now, call 999 or go to A&E. You are not wasting anyone's time.",
+      "For 24/7 non-emergency support, text SHOUT to 85258 (free, anonymous). Or Samaritans 116 123.",
+      "YoungMinds and Papyrus have specific, non-cringe resources for young people going through this.",
+    ],
+    resources: [
+      { name: "Samaritans", detail: "116 123 — 24/7, free, any issue", url: "https://www.samaritans.org" },
+      { name: "Shout", detail: "Text SHOUT to 85258 — 24/7 crisis text", url: "https://giveusashout.org" },
+      { name: "YoungMinds", detail: "For under 25s", url: "https://www.youngminds.org.uk" },
+      { name: "Papyrus HOPELINE247", detail: "0800 068 4141 — specifically for young people with thoughts of suicide", url: "https://www.papyrus-uk.org" },
+    ],
+  },
+  {
+    id: "discrimination",
+    icon: "⚖️",
+    color: "bg-rose-200",
+    shadow: "shadow-hard-colored-rose",
+    title: "I'm being discriminated against",
+    blurb: "Racism, homophobia, ableism, religious discrimination, sexism.",
+    articles: [
+      { num: 2, title: "No Discrimination", text: "All your rights apply regardless of race, gender, sexuality, religion, disability, background, or anything else." },
+      { num: 23, title: "Disability", text: "If discrimination relates to disability, services have a legal duty to adjust — not to be kind, but as a legal requirement." },
+    ],
+    actions: [
+      "Write it down. Date, time, who, what was said or done, witnesses. Memory blurs; contemporaneous notes don't.",
+      "In the UK, the Equality Act 2010 covers nine 'protected characteristics.' Discrimination on these grounds is usually illegal in school, work, and services.",
+      "School or workplace: report to safeguarding lead / HR / head of year. In writing.",
+      "If internal routes fail: Equality Advisory Support Service, Citizens Advice, or a charity specific to your issue (e.g. Stonewall for LGBTQ+).",
+      "Anger is a reasonable response. Documentation is what converts anger into change.",
+    ],
+    resources: [
+      { name: "Equality Advisory Support Service", detail: "0808 800 0082", url: "https://www.equalityadvisoryservice.com" },
+      { name: "Stonewall", detail: "LGBTQ+ equality support", url: "https://www.stonewall.org.uk" },
+      { name: "Citizens Advice", detail: "Free advice on discrimination", url: "https://www.citizensadvice.org.uk" },
+      { name: "Coram Children's Legal Centre", detail: "Free legal advice for under-18s", url: "https://www.childrenslegalcentre.com" },
+    ],
+  },
+  {
+    id: "school",
+    icon: "🎒",
+    color: "bg-sky-200",
+    shadow: "shadow-hard-colored-sky",
+    title: "My school is treating me unfairly",
+    blurb: "Exclusions, sanctions, not listening, uniform issues, SEN support.",
+    articles: [
+      { num: 28, title: "Education", text: "You have the right to education — which includes fair, respectful treatment inside it." },
+      { num: 12, title: "Being Heard", text: "Especially in decisions like exclusions and sanctions." },
+    ],
+    actions: [
+      "Read your school's behaviour and complaints policies. They must have both, and you're entitled to see them.",
+      "Start with the teacher. If that fails, escalate to head of year / head of department, then the head teacher, then the governing body.",
+      "Schools must follow their own policy — they can't invent rules on the day. 'Show me where that's written' is a legitimate question.",
+      "For exclusions: there are legal procedures. Ask for the written reasons, and know you have a right to make representations.",
+      "Ofsted investigates serious complaints (for state schools in England). Governors are a formal route.",
+    ],
+    resources: [
+      { name: "Coram Children's Legal Centre", detail: "Free education law advice", url: "https://www.childrenslegalcentre.com" },
+      { name: "IPSEA (SEN)", detail: "0800 018 4016 — special educational needs", url: "https://www.ipsea.org.uk" },
+      { name: "Ofsted", detail: "Serious complaints about a school", url: "https://www.gov.uk/complain-about-school" },
+    ],
+  },
+  {
+    id: "work",
+    icon: "💼",
+    color: "bg-yellow-200",
+    shadow: "shadow-hard",
+    title: "I'm being exploited at work",
+    blurb: "Underpaid, unpaid trials, illegal hours, unsafe conditions, harassment.",
+    articles: [
+      { num: 32, title: "Work", text: "Protection from work that harms your health, education, or development — and from economic exploitation." },
+    ],
+    actions: [
+      "Know the numbers. UK minimum wage is age-banded (under 18 / 18-20 / 21+) and updates every April. Check gov.uk for current rates.",
+      "You're entitled to breaks (30 mins after 4.5 hours at 16-17; stricter rules for under-16s).",
+      "Unpaid 'trial shifts' are almost always illegal if you're doing productive work for the business.",
+      "If you're school age: strict limits on hours, no working during school time, specific permits required in some councils.",
+      "Report wage theft: HMRC National Minimum Wage team investigates (anonymously if you want). ACAS is free employment advice.",
+    ],
+    resources: [
+      { name: "ACAS", detail: "0300 123 1100 — free employment advice", url: "https://www.acas.org.uk" },
+      { name: "HMRC Minimum Wage", detail: "0800 917 2368 — report wage theft", url: "https://www.gov.uk/pay-and-work-rights" },
+      { name: "Citizens Advice", detail: "Free employment advice", url: "https://www.citizensadvice.org.uk" },
+    ],
+  },
+  {
+    id: "privacy",
+    icon: "📱",
+    color: "bg-emerald-200",
+    shadow: "shadow-hard-colored-emerald",
+    title: "Someone shared something private about me",
+    blurb: "Photos, videos, messages, rumours spread without your consent.",
+    articles: [
+      { num: 16, title: "Privacy", text: "Your private life is protected from arbitrary interference — that includes images, messages, and personal information." },
+    ],
+    actions: [
+      "Do NOT delete evidence. Screenshot what you can see. Note URLs, usernames, dates.",
+      "If it's an intimate image: for under-18s, use Report Remove (NSPCC + IWF) — they can get it taken down from the internet.",
+      "For anyone: the Revenge Porn Helpline helps get images removed and advises on legal options.",
+      "It's a criminal offence in England and Wales to share or threaten to share intimate images without consent. Reporting to police is your right.",
+      "Report to the platform. Under the Online Safety Act they must act quickly on image-based abuse.",
+      "This is not your fault. It doesn't say anything about you. It says everything about the person who shared it.",
+    ],
+    resources: [
+      { name: "Report Remove", detail: "For under-18s — intimate image removal", url: "https://www.childline.org.uk/info-advice/bullying-abuse-safety/online-mobile-safety/report-remove" },
+      { name: "Revenge Porn Helpline", detail: "0345 6000 459 (Mon-Fri)", url: "https://revengepornhelpline.org.uk" },
+      { name: "Childline", detail: "0800 1111", url: "https://www.childline.org.uk" },
+      { name: "Police", detail: "101 non-emergency, 999 if threats ongoing", url: null },
+    ],
+  },
+  {
+    id: "bullying",
+    icon: "💬",
+    color: "bg-rose-200",
+    shadow: "shadow-hard-colored-rose",
+    title: "I'm being bullied — online or in person",
+    blurb: "Group chats, cyberbullying, harassment, exclusion, hate speech.",
+    articles: [
+      { num: 19, title: "Protection from Harm", text: "Covers bullying, harassment, and cyberbullying." },
+      { num: 28, title: "Education", text: "Schools have a legal duty to prevent bullying and have an anti-bullying policy." },
+    ],
+    actions: [
+      "Screenshot everything. Save messages. Log dates. You don't have to engage — but evidence matters if it escalates.",
+      "Tell someone. Teacher, tutor, safeguarding lead, parent, Childline. 'I don't want to make a fuss' is how bullying keeps working.",
+      "Block and report on every platform. Don't delete the chat — mute and step away, but keep what you've got.",
+      "Schools must have an anti-bullying policy by law. Ask to see it. If they aren't following their own policy, escalate to governors.",
+      "If threats become physical or specific, this crosses into harassment or hate crime. Police take it seriously.",
+    ],
+    resources: [
+      { name: "Childline", detail: "0800 1111", url: "https://www.childline.org.uk" },
+      { name: "Anti-Bullying Alliance", detail: "Advice and resources", url: "https://anti-bullyingalliance.org.uk" },
+      { name: "The Mix", detail: "Support for under-25s", url: "https://www.themix.org.uk" },
+      { name: "Police (if criminal)", detail: "101 non-emergency, 999 emergency", url: null },
+    ],
+  },
+  {
+    id: "entitled",
+    icon: "📚",
+    color: "bg-yellow-200",
+    shadow: "shadow-hard",
+    title: "I just want to know what I'm entitled to",
+    blurb: "I'm not in crisis — I'm trying to understand the basics.",
+    articles: [
+      { num: 42, title: "Knowing Your Rights", text: "The UNCRC says adults have to actively tell you what your rights are. That's why this site exists." },
+      { num: 12, title: "Being Heard", text: "The fact you're asking is already the right moving." },
+    ],
+    actions: [
+      "Read the Know Your Rights or Field Guide sections on this site — that's most of what applies to you day-to-day.",
+      "UNICEF's child-friendly UNCRC is a great overview of all 54 articles in plain language.",
+      "In the UK, each nation has a Children's Commissioner — they exist specifically to protect your rights, and they're a great resource for serious issues.",
+      "Citizens Advice can answer almost any 'am I allowed to...' question with factual accuracy.",
+      "You are allowed to not know things and ask. Not knowing your rights isn't your fault — it's a failure of Article 42 that happens everywhere.",
+    ],
+    resources: [
+      { name: "UNICEF UK — UNCRC", detail: "Full child-friendly version of all 54 articles", url: "https://www.unicef.org.uk/what-we-do/un-convention-child-rights/" },
+      { name: "Children's Commissioner (England)", detail: "Advocates for under-18s", url: "https://www.childrenscommissioner.gov.uk" },
+      { name: "Citizens Advice", detail: "Free advice on anything", url: "https://www.citizensadvice.org.uk" },
+    ],
+  },
+];
+
+// ============================================================================
+// STATE
+// ============================================================================
+
+const state = {
+  view: "home",
+  score: 0,
+  ageBadge: null,
+  board: { position: 0, dice: null, rolling: false, tileAction: null, finished: false, selectedAnswer: null, skipNext: false },
+  kidsScenario: { current: 0, selected: null, done: false },
+  kidsRightsIndex: 0,
+  teensRightsIndex: 0,
+  teensScenario: { index: 0, selected: null, reflections: [] },
+  quiz: { index: 0, answered: false, selected: null, correctCount: 0 },
+  askTopicId: null,
+};
+
+// ============================================================================
+// HELPERS
+// ============================================================================
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[c]);
+}
+
+function setView(v, badgeText) {
+  state.view = v;
+  state.ageBadge = badgeText || null;
+  const homeBtn = document.getElementById('home-btn');
+  const ageBadge = document.getElementById('age-badge');
+  if (v === 'home') {
+    homeBtn.classList.add('hidden');
+    homeBtn.classList.remove('flex');
+    ageBadge.classList.add('hidden');
+  } else {
+    homeBtn.classList.remove('hidden');
+    homeBtn.classList.add('flex');
+    if (badgeText) {
+      ageBadge.textContent = badgeText;
+      ageBadge.classList.remove('hidden');
+    } else {
+      ageBadge.classList.add('hidden');
+    }
+  }
+  window.scrollTo({ top: 0, behavior: 'instant' });
+  render();
+}
+
+function goHome() {
+  // Reset all local view state
+  state.score = 0;
+  state.board = { position: 0, dice: null, rolling: false, tileAction: null, finished: false, selectedAnswer: null, skipNext: false };
+  state.kidsScenario = { current: 0, selected: null, done: false };
+  state.kidsRightsIndex = 0;
+  state.teensRightsIndex = 0;
+  state.teensScenario = { index: 0, selected: null, reflections: [] };
+  state.quiz = { index: 0, answered: false, selected: null, correctCount: 0 };
+  state.askTopicId = null;
+  setView('home');
+}
+
+// ============================================================================
+// HOME (age picker)
+// ============================================================================
+
+function renderHome() {
+  const tracks = [
+    {
+      id: 'kids',
+      subtitle: 'AGES 8–12',
+      title: 'Rights Quest',
+      desc: 'A board game, real-life situations, and a library of rights in plain language. Play your way through it.',
+      color: 'bg-rose-200', rotate: '-rotate-2', emoji: '🧭',
+      badge: 'AGES 8–12',
+    },
+    {
+      id: 'teens',
+      subtitle: 'AGES 13–18',
+      title: 'The Field Guide',
+      desc: 'What your rights actually look like. Situations with no easy answers. UK law most schools don\'t teach.',
+      color: 'bg-sky-200', rotate: 'rotate-1', emoji: '🎯',
+      badge: 'AGES 13–18',
+    },
+    {
+      id: 'ask',
+      subtitle: 'ANY AGE',
+      title: 'Ask Article 42',
+      desc: 'Stuck on something? Pick a worry. We\'ll show the rights that apply and exactly where to turn for real help.',
+      color: 'bg-emerald-200', rotate: '-rotate-1', emoji: '💬',
+      badge: 'ANY AGE',
+    },
+  ];
+
+  return `
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-10 sm:py-14">
+      <div class="mb-10 sm:mb-14 text-center">
+        <div class="inline-block bg-stone-900 text-amber-50 px-3 py-1 text-xs font-black tracking-widest mb-5 transform -rotate-1">BASED ON THE UNCRC · UK</div>
+        <h1 class="font-black text-4xl sm:text-6xl md:text-7xl text-stone-900 leading-none tracking-tight mb-5">
+          you have rights.<br>
+          <span class="italic bg-yellow-300 px-3 inline-block transform -rotate-1 mt-3">nobody told you.</span>
+        </h1>
+        <p class="text-stone-700 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+          With rights come <span class="font-bold decoration-wavy decoration-rose-500">responsibilities</span>. Two sides, same coin. Pick how old you are — we'll show you what's actually yours.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6 mb-14">
+        ${tracks.map(t => `
+          <button onclick="enterTrack('${t.id}', '${t.badge}')" class="${t.color} ${t.rotate} hover:rotate-0 hover:scale-[1.02] transition-all duration-300 p-6 sm:p-7 rounded-2xl border-4 border-stone-900 text-left shadow-hard hover:shadow-hard-sm hover:translate-x-[3px] hover:translate-y-[3px]">
+            <div class="mb-5 text-5xl">${t.emoji}</div>
+            <div class="text-xs font-black text-stone-700 tracking-widest mb-1">${escapeHtml(t.subtitle)}</div>
+            <h3 class="font-black text-2xl text-stone-900 mb-3 leading-tight">${escapeHtml(t.title)}</h3>
+            <p class="text-stone-800 text-sm leading-relaxed">${escapeHtml(t.desc)}</p>
+            <div class="mt-5 inline-flex items-center gap-1.5 font-black text-stone-900 text-sm">Start →</div>
+          </button>
+        `).join('')}
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 pt-8 border-t-4 border-stone-900">
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 transform -rotate-[0.5deg] shadow-hard-md">
+          <div class="text-xs font-black tracking-widest text-rose-700 mb-2">GROUND RULE 01</div>
+          <h4 class="font-black text-2xl text-stone-900 mb-2">A right isn't earned.</h4>
+          <p class="text-stone-700 text-sm leading-relaxed">Nobody gives you rights as a reward for good behaviour. They're yours because you exist. The UNCRC was signed by almost every country on Earth in 1989 and it still applies to you, today, at whatever age you are under 18.</p>
+        </div>
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 transform rotate-[0.5deg] shadow-hard-md">
+          <div class="text-xs font-black tracking-widest text-rose-700 mb-2">GROUND RULE 02</div>
+          <h4 class="font-black text-2xl text-stone-900 mb-2">Responsibilities aren't the price.</h4>
+          <p class="text-stone-700 text-sm leading-relaxed">They're not what you pay to keep your rights. They're what makes other people's rights actually work — which is what makes yours actually work too. Same coin. Both sides matter.</p>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-stone-900 text-amber-50 rounded-2xl p-6 sm:p-8 transform rotate-[0.3deg] shadow-hard">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-yellow-300 text-stone-900 rounded-full flex items-center justify-center text-2xl font-black">42</div>
+          <div>
+            <h4 class="font-black text-lg sm:text-xl mb-1">Why "Article 42"?</h4>
+            <p class="text-stone-300 text-sm sm:text-base leading-relaxed">
+              Article 42 of the UNCRC is the one that says governments have to actively <span class="text-yellow-300 font-bold">tell children what their rights are</span>. So a site that does exactly that is literally named after its own job. Most schools don't cover this stuff. Welcome — start wherever you want.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function enterTrack(id, badge) {
+  if (id === 'kids') setView('kids-home', badge);
+  else if (id === 'teens') setView('teens-home', badge);
+  else if (id === 'ask') setView('ask-home', badge);
+}
+
+// ============================================================================
+// KIDS HOME
+// ============================================================================
+
+function renderKidsHome() {
+  const games = [
+    { id: "kids-board", title: "Rights Quest", subtitle: "BOARD GAME ADVENTURE", desc: "Roll the dice, move around the board, discover your rights as you go. Answer questions, face real situations, collect points.", color: "bg-rose-200", rotate: "-rotate-2", emoji: "🎲" },
+    { id: "kids-scenarios", title: "What Would You Do?", subtitle: "REAL CHOICES", desc: "Tricky everyday situations. Pick what you'd actually do — then see which rights are at play.", color: "bg-sky-200", rotate: "rotate-1", emoji: "📖" },
+    { id: "kids-library", title: "Rights Library", subtitle: "QUICK REFERENCE", desc: "Flip through the key articles of the UN Convention on the Rights of the Child in plain language.", color: "bg-emerald-200", rotate: "-rotate-1", emoji: "🛡️" },
+  ];
+
+  return `
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="mb-8">
+        <div class="text-xs font-black text-stone-600 tracking-widest">TRACK · AGES 8–12</div>
+        <h2 class="font-black text-3xl sm:text-5xl text-stone-900 leading-tight mt-1">Rights Quest</h2>
+        <p class="text-stone-700 text-base sm:text-lg mt-2 max-w-2xl">Three ways in. Start wherever sounds fun.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5 sm:gap-6 mb-10">
+        ${games.map(g => `
+          <button onclick="setView('${g.id}', 'AGES 8–12')" class="${g.color} ${g.rotate} hover:rotate-0 hover:scale-[1.02] transition-all duration-300 p-6 sm:p-7 rounded-2xl border-4 border-stone-900 text-left shadow-hard hover:shadow-hard-sm hover:translate-x-[3px] hover:translate-y-[3px]">
+            <div class="mb-5 text-5xl">${g.emoji}</div>
+            <div class="text-xs font-black text-stone-700 tracking-widest mb-1">${g.subtitle}</div>
+            <h3 class="font-black text-2xl text-stone-900 mb-3 leading-tight">${g.title}</h3>
+            <p class="text-stone-800 text-sm leading-relaxed">${g.desc}</p>
+            <div class="mt-5 inline-flex items-center gap-1.5 font-black text-stone-900 text-sm">Start →</div>
+          </button>
+        `).join('')}
+      </div>
+
+      <div class="bg-stone-900 text-amber-50 rounded-2xl p-6 sm:p-7 transform rotate-[0.3deg]">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-yellow-300 text-stone-900 rounded-full flex items-center justify-center text-2xl">💡</div>
+          <div>
+            <h4 class="font-black text-lg mb-1">Quick thought</h4>
+            <p class="text-stone-300 text-sm leading-relaxed">A <span class="font-bold text-yellow-300">right</span> is something you're entitled to. A <span class="font-bold text-yellow-300">responsibility</span> is what you do to make sure other people's rights work too. They're two sides of the same coin.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================================
+// KIDS — BOARD GAME
+// ============================================================================
+
+function tileColor(tile) {
+  if (tile.type === "start") return "bg-stone-900 text-amber-50";
+  if (tile.type === "finish") return "bg-yellow-300 text-stone-900";
+  if (tile.type === "right") return "bg-rose-200 text-stone-900";
+  if (tile.type === "question") return "bg-sky-200 text-stone-900";
+  if (tile.type === "scenario") return "bg-emerald-200 text-stone-900";
+  if (tile.type === "bonus") return "bg-yellow-200 text-stone-900";
+  if (tile.type === "skip") return "bg-stone-300 text-stone-900";
+  return "bg-amber-100 text-stone-900";
+}
+function tileLabel(tile) {
+  if (tile.type === "start") return "START";
+  if (tile.type === "finish") return "FINISH";
+  if (tile.type === "right") return "RIGHT";
+  if (tile.type === "question") return "QUIZ";
+  if (tile.type === "scenario") return "CHOICE";
+  if (tile.type === "bonus") return "BONUS";
+  if (tile.type === "skip") return "PAUSE";
+  return "";
+}
+
+function renderBoardGame() {
+  const b = state.board;
+  const boardHtml = boardTiles.map((tile, idx) => `
+    <div class="${tileColor(tile)} relative aspect-square border-2 border-stone-900 rounded-lg p-1.5 sm:p-2 flex flex-col items-center justify-center text-center transition-all ${b.position === idx ? 'ring-4 ring-yellow-400 scale-110 z-10' : ''}">
+      <div class="text-[8px] sm:text-[9px] font-black tracking-wider opacity-70">${tileLabel(tile)}</div>
+      <div class="text-xs sm:text-sm font-bold">${idx}</div>
+      ${b.position === idx ? '<div class="absolute -top-3 -right-2 text-2xl sm:text-3xl player-piece">🧭</div>' : ''}
+    </div>
+  `).join('');
+
+  let bottomArea = '';
+
+  if (b.finished) {
+    bottomArea = `
+      <div class="bg-yellow-300 border-4 border-stone-900 rounded-2xl p-8 text-center shadow-hard transform -rotate-1">
+        <div class="text-6xl mb-3">🏆</div>
+        <h3 class="font-black text-4xl text-stone-900 mb-2">You made it!</h3>
+        <p class="text-stone-800 text-lg mb-5">You finished with <span class="font-black">${state.score} points</span>. More importantly — you now know a lot more about your rights.</p>
+        <button onclick="resetBoard()" class="bg-stone-900 text-amber-50 font-bold px-6 py-3 rounded-lg hover:bg-rose-600">Play again</button>
+      </div>
+    `;
+  } else if (b.tileAction) {
+    const t = b.tileAction;
+    if (t.kind === 'right') {
+      bottomArea = `
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 shadow-hard fade-in">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-rose-500 text-amber-50 rounded-xl flex items-center justify-center text-xl">🛡️</div>
+            <div>
+              <div class="text-xs font-bold tracking-widest text-rose-700">UNCRC — ${escapeHtml(t.title)}</div>
+              <div class="font-black text-xl text-stone-900">A Right Unlocked</div>
+            </div>
+          </div>
+          <p class="text-stone-800 text-lg mb-3 leading-relaxed">${escapeHtml(t.text)}</p>
+          <p class="text-stone-700 italic mb-5 bg-yellow-200 p-3 rounded-lg border-2 border-stone-900">${escapeHtml(t.responsibility)}</p>
+          <button onclick="acknowledgeRight()" class="bg-stone-900 text-amber-50 font-bold px-5 py-2.5 rounded-lg hover:bg-rose-600">Got it (+3 pts)</button>
+        </div>
+      `;
+    } else if (t.kind === 'question') {
+      const show = b.selectedAnswer !== null;
+      bottomArea = `
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 shadow-hard fade-in">
+          <div class="text-xs font-bold tracking-widest text-sky-700 mb-2">QUIZ TIME</div>
+          <h3 class="font-black text-xl sm:text-2xl text-stone-900 mb-5 leading-tight">${escapeHtml(t.q)}</h3>
+          <div class="space-y-2 mb-4">
+            ${t.options.map((opt, i) => {
+              const isCorrect = i === t.correct;
+              const isSelected = b.selectedAnswer === i;
+              let cls = 'bg-amber-50 hover:bg-sky-200';
+              if (show) {
+                if (isCorrect) cls = 'bg-emerald-300';
+                else if (isSelected) cls = 'bg-rose-300';
+                else cls = 'bg-amber-50 opacity-50';
+              }
+              return `
+                <button onclick="${show ? '' : `submitBoardAnswer(${i})`}" ${show ? 'disabled' : ''} class="${cls} w-full text-left p-3 sm:p-4 rounded-lg border-2 border-stone-900 font-bold transition-all">
+                  <span class="flex items-center justify-between">
+                    <span>${escapeHtml(opt)}</span>
+                    ${show && isCorrect ? '<span>✓</span>' : ''}
+                  </span>
+                </button>
+              `;
+            }).join('')}
+          </div>
+          ${show ? `
+            <div class="mt-4">
+              <p class="text-stone-800 mb-4 font-bold">${b.selectedAnswer === t.correct ? '✓ Correct! +10 points' : 'Not quite — but now you know! -2 points'}</p>
+              <button onclick="closeTileAction()" class="bg-stone-900 text-amber-50 font-bold px-5 py-2.5 rounded-lg hover:bg-sky-600">Continue</button>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    } else if (t.kind === 'scenario') {
+      const show = b.selectedAnswer !== null;
+      bottomArea = `
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 shadow-hard fade-in">
+          <div class="text-xs font-bold tracking-widest text-emerald-700 mb-2">WHAT WOULD YOU DO?</div>
+          <p class="text-stone-900 text-lg mb-5 leading-relaxed italic">"${escapeHtml(t.text)}"</p>
+          <div class="space-y-2 mb-4">
+            ${t.choices.map((choice, i) => {
+              const isCorrect = i === t.correct;
+              const isSelected = b.selectedAnswer === i;
+              let cls = 'bg-amber-50 hover:bg-emerald-200';
+              if (show) {
+                if (isCorrect) cls = 'bg-emerald-300';
+                else if (isSelected) cls = 'bg-rose-300';
+                else cls = 'bg-amber-50 opacity-50';
+              }
+              return `
+                <button onclick="${show ? '' : `submitBoardAnswer(${i})`}" ${show ? 'disabled' : ''} class="${cls} w-full text-left p-3 sm:p-4 rounded-lg border-2 border-stone-900 font-bold transition-all">
+                  ${escapeHtml(choice)}
+                </button>
+              `;
+            }).join('')}
+          </div>
+          ${show ? `
+            <div class="mt-4">
+              <div class="bg-yellow-200 border-2 border-stone-900 p-4 rounded-lg mb-4">
+                <div class="text-xs font-black tracking-widest mb-1">THE LESSON</div>
+                <p class="text-stone-900 text-sm leading-relaxed">${escapeHtml(t.lesson)}</p>
+              </div>
+              <button onclick="closeTileAction()" class="bg-stone-900 text-amber-50 font-bold px-5 py-2.5 rounded-lg hover:bg-emerald-600">Continue</button>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    } else if (t.kind === 'info') {
+      bottomArea = `
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 shadow-hard fade-in">
+          <div class="text-2xl mb-3">✨</div>
+          <p class="text-stone-900 text-lg mb-5 font-bold">${escapeHtml(t.text)}</p>
+          <button onclick="closeTileAction()" class="bg-stone-900 text-amber-50 font-bold px-5 py-2.5 rounded-lg hover:bg-yellow-500 hover:text-stone-900">Continue</button>
+        </div>
+      `;
+    }
+  } else {
+    bottomArea = `
+      <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 text-center shadow-hard">
+        <p class="text-stone-700 mb-4 font-bold">${b.skipNext ? "You're skipping this turn!" : "Ready for your turn?"}</p>
+        <div class="flex items-center justify-center gap-6 mb-5">
+          <div id="dice-box" class="w-20 h-20 sm:w-24 sm:h-24 bg-stone-900 text-amber-50 rounded-2xl flex items-center justify-center text-4xl sm:text-5xl font-black transition-transform ${b.rolling ? 'dice-rolling' : ''}">
+            ${b.dice || '?'}
+          </div>
+        </div>
+        <button onclick="rollDice()" ${b.rolling ? 'disabled' : ''} class="bg-stone-900 text-amber-50 font-black text-lg px-8 py-3 rounded-xl hover:bg-rose-600 transition-colors disabled:opacity-50 transform hover:scale-105">
+          ${b.skipNext ? 'SKIP TURN' : b.rolling ? 'ROLLING...' : 'ROLL THE DICE'}
+        </button>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-6 flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <div class="text-xs font-bold text-stone-600 tracking-widest">RIGHTS QUEST · GAME 1</div>
+          <h2 class="font-black text-3xl sm:text-4xl text-stone-900">Roll & learn</h2>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="bg-stone-900 text-amber-50 px-3 py-2 rounded-lg text-sm font-bold">${state.score} pts</div>
+          <div class="bg-stone-900 text-amber-50 px-3 py-2 rounded-lg text-sm font-bold">Tile ${b.position}/${boardTiles.length - 1}</div>
+          <button onclick="resetBoard()" class="bg-amber-50 border-2 border-stone-900 px-3 py-2 rounded-lg text-sm font-bold hover:bg-stone-900 hover:text-amber-50 flex items-center gap-1.5">↻ Reset</button>
+        </div>
+      </div>
+
+      <div class="bg-amber-100 border-4 border-stone-900 rounded-2xl p-4 sm:p-6 mb-6 shadow-hard">
+        <div class="grid grid-cols-5 sm:grid-cols-7 gap-2 sm:gap-3">${boardHtml}</div>
+        <div class="mt-4 flex flex-wrap gap-2 text-[10px] sm:text-xs">
+          <span class="px-2 py-0.5 bg-rose-200 border border-stone-900 rounded font-bold">Right</span>
+          <span class="px-2 py-0.5 bg-sky-200 border border-stone-900 rounded font-bold">Quiz</span>
+          <span class="px-2 py-0.5 bg-emerald-200 border border-stone-900 rounded font-bold">Choice</span>
+          <span class="px-2 py-0.5 bg-yellow-200 border border-stone-900 rounded font-bold">Bonus</span>
+          <span class="px-2 py-0.5 bg-stone-300 border border-stone-900 rounded font-bold">Pause</span>
+        </div>
+      </div>
+      ${bottomArea}
+    </div>
+  `;
+}
+
+function rollDice() {
+  const b = state.board;
+  if (b.rolling || b.tileAction || b.finished) return;
+  if (b.skipNext) {
+    b.skipNext = false;
+    b.tileAction = { kind: 'info', text: 'You skipped a turn to think it through. Smart move!' };
+    render();
+    return;
+  }
+  b.rolling = true;
+  render();
+  let count = 0;
+  const interval = setInterval(() => {
+    b.dice = Math.floor(Math.random() * 6) + 1;
+    count++;
+    const diceBox = document.getElementById('dice-box');
+    if (diceBox) diceBox.textContent = b.dice;
+    if (count > 8) {
+      clearInterval(interval);
+      const finalRoll = Math.floor(Math.random() * 6) + 1;
+      b.dice = finalRoll;
+      b.rolling = false;
+      const target = Math.min(b.position + finalRoll, boardTiles.length - 1);
+      b.position = target;
+      render();
+      setTimeout(() => { handleTile(target); render(); }, 400);
+    }
+  }, 80);
+}
+
+function handleTile(idx) {
+  const b = state.board;
+  const tile = boardTiles[idx];
+  if (tile.type === 'finish') { b.finished = true; return; }
+  if (tile.type === 'right') b.tileAction = { kind: 'right', ...tile };
+  else if (tile.type === 'question') b.tileAction = { kind: 'question', ...tile };
+  else if (tile.type === 'scenario') b.tileAction = { kind: 'scenario', ...tile };
+  else if (tile.type === 'bonus') { state.score += 5; b.tileAction = { kind: 'info', text: tile.text }; }
+  else if (tile.type === 'skip') { b.skipNext = true; b.tileAction = { kind: 'info', text: tile.text }; }
+}
+
+function submitBoardAnswer(idx) {
+  const b = state.board;
+  b.selectedAnswer = idx;
+  if (idx === b.tileAction.correct) state.score += 10;
+  else state.score = Math.max(0, state.score - 2);
+  render();
+}
+
+function acknowledgeRight() { state.score += 3; closeTileAction(); }
+
+function closeTileAction() {
+  const b = state.board;
+  b.tileAction = null;
+  b.selectedAnswer = null;
+  if (b.position === boardTiles.length - 1) b.finished = true;
+  render();
+}
+
+function resetBoard() {
+  state.board = { position: 0, dice: null, rolling: false, tileAction: null, finished: false, selectedAnswer: null, skipNext: false };
+  render();
+}
+
+// ============================================================================
+// KIDS — SCENARIOS
+// ============================================================================
+
+function renderKidsScenarios() {
+  const s = state.kidsScenario;
+  if (s.done) {
+    return `
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+        <div class="bg-yellow-300 border-4 border-stone-900 rounded-2xl p-8 text-center shadow-hard transform rotate-1">
+          <div class="text-6xl mb-3">🏆</div>
+          <h3 class="font-black text-4xl text-stone-900 mb-2">All done!</h3>
+          <p class="text-stone-800 text-lg mb-5">You worked through ${kidsScenarios.length} real-life situations. Your score: <span class="font-black">${state.score} points</span>.</p>
+          <button onclick="restartKidsScenarios()" class="bg-stone-900 text-amber-50 font-bold px-6 py-3 rounded-lg hover:bg-sky-600">Try again</button>
+        </div>
+      </div>
+    `;
+  }
+
+  const scene = kidsScenarios[s.current];
+  const show = s.selected !== null;
+  const progressDots = kidsScenarios.map((_, i) => {
+    let bg = 'bg-amber-50';
+    if (i < s.current) bg = 'bg-emerald-400';
+    else if (i === s.current) bg = 'bg-yellow-300';
+    return `<div class="h-2 flex-1 rounded-full border-2 border-stone-900 ${bg}"></div>`;
+  }).join('');
+
+  const choicesHtml = scene.choices.map((choice, i) => {
+    const isSelected = s.selected === i;
+    let bg = 'bg-amber-50 hover:bg-yellow-200';
+    if (show) {
+      if (isSelected && choice.outcome === 'good') bg = 'bg-emerald-300';
+      else if (isSelected && choice.outcome === 'ok') bg = 'bg-yellow-300';
+      else if (isSelected) bg = 'bg-rose-300';
+      else bg = 'bg-amber-50 opacity-40';
+    }
+    return `
+      <button onclick="${show ? '' : `pickKidsScenario(${i})`}" ${show ? 'disabled' : ''} class="${bg} w-full text-left p-4 rounded-lg border-2 border-stone-900 font-bold transition-all hover:shadow-hard-sm">
+        ${escapeHtml(choice.text)}
+      </button>
+    `;
+  }).join('');
+
+  return `
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <div class="mb-6">
+        <div class="text-xs font-bold text-stone-600 tracking-widest">RIGHTS QUEST · GAME 2</div>
+        <h2 class="font-black text-3xl sm:text-4xl text-stone-900">What would you do?</h2>
+        <div class="mt-3 flex items-center gap-2">${progressDots}</div>
+      </div>
+
+      <div class="bg-sky-100 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 shadow-hard transform -rotate-[0.5deg]">
+        <div class="text-xs font-black tracking-widest text-sky-700 mb-2">SITUATION ${s.current + 1} OF ${kidsScenarios.length}</div>
+        <h3 class="font-black text-2xl sm:text-3xl text-stone-900 mb-4 leading-tight">${escapeHtml(scene.title)}</h3>
+        <p class="text-stone-800 text-base sm:text-lg mb-6 leading-relaxed italic border-l-4 border-stone-900 pl-4">"${escapeHtml(scene.text)}"</p>
+        <div class="space-y-3 mb-4">${choicesHtml}</div>
+        ${show ? `
+          <div class="mt-5">
+            <div class="bg-stone-900 text-amber-50 rounded-lg p-5 mb-4">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-yellow-300">✨</span>
+                <span class="font-black tracking-widest text-xs">HERE'S WHAT THAT MEANS</span>
+              </div>
+              <p class="leading-relaxed">${escapeHtml(scene.choices[s.selected].feedback)}</p>
+            </div>
+            <button onclick="nextKidsScenario()" class="bg-stone-900 text-amber-50 font-bold px-6 py-3 rounded-lg hover:bg-sky-600 flex items-center gap-2">
+              ${s.current < kidsScenarios.length - 1 ? 'Next situation' : 'See results'} →
+            </button>
+          </div>
+        ` : ''}
+      </div>
+    </div>
+  `;
+}
+
+function pickKidsScenario(i) {
+  const s = state.kidsScenario;
+  if (s.selected !== null) return;
+  s.selected = i;
+  const outcome = kidsScenarios[s.current].choices[i].outcome;
+  if (outcome === 'good') state.score += 10;
+  else if (outcome === 'ok') state.score += 3;
+  render();
+}
+
+function nextKidsScenario() {
+  const s = state.kidsScenario;
+  if (s.current < kidsScenarios.length - 1) { s.current++; s.selected = null; }
+  else { s.done = true; }
+  render();
+}
+
+function restartKidsScenarios() { state.kidsScenario = { current: 0, selected: null, done: false }; render(); }
+
+// ============================================================================
+// KIDS — LIBRARY
+// ============================================================================
+
+function renderKidsLibrary() {
+  const colors = ['bg-rose-200', 'bg-sky-200', 'bg-emerald-200', 'bg-yellow-200', 'bg-amber-200', 'bg-orange-200'];
+  const rotates = ['-rotate-1', 'rotate-1', '-rotate-[0.5deg]', 'rotate-[0.5deg]', '-rotate-2', 'rotate-2'];
+  const cards = kidsRights.map((r, i) => `
+    <div class="${colors[i % colors.length]} ${rotates[i % rotates.length]} border-4 border-stone-900 rounded-2xl p-5 shadow-hard-md hover:rotate-0 transition-transform">
+      <div class="flex items-start justify-between mb-3">
+        <div class="w-10 h-10 bg-stone-900 text-amber-50 rounded-lg flex items-center justify-center text-lg">🛡️</div>
+        <div class="bg-stone-900 text-amber-50 font-black text-sm px-2 py-1 rounded">#${r.num}</div>
+      </div>
+      <h3 class="font-black text-xl text-stone-900 mb-2">${escapeHtml(r.title)}</h3>
+      <p class="text-stone-800 text-sm leading-relaxed">${escapeHtml(r.text)}</p>
+    </div>
+  `).join('');
+
+  return `
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <div class="mb-8">
+        <div class="text-xs font-bold text-stone-600 tracking-widest">RIGHTS QUEST · REFERENCE</div>
+        <h2 class="font-black text-3xl sm:text-4xl text-stone-900 mb-2">Rights Library</h2>
+        <p class="text-stone-700">${kidsRights.length} key rights from the UN Convention on the Rights of the Child — in plain language.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">${cards}</div>
+      <div class="mt-10 bg-stone-900 text-amber-50 rounded-2xl p-6 sm:p-7">
+        <h4 class="font-black text-xl mb-2">Want to read all 54 articles?</h4>
+        <p class="text-stone-300 text-sm leading-relaxed">
+          UNICEF has a child-friendly version of the full UN Convention online. Ask a parent or teacher to help you look it up — it's worth knowing.
+        </p>
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================================
+// TEENS HOME
+// ============================================================================
+
+function renderTeensHome() {
+  const sections = [
+    { id: 'teens-rights', num: '01', title: 'Know Your Rights', desc: 'A deck of 12 rights that actually matter to teenagers — what the words mean, what they look like in real life, and what\'s yours to claim.', meta: '12 cards · ~7 min' },
+    { id: 'teens-scenarios', num: '02', title: 'The Situation Room', desc: 'Ten real situations — digital life, consent, work, mental health, discrimination, police, relationships. No obvious answers.', meta: '10 situations · ~15 min' },
+    { id: 'teens-quiz', num: '03', title: 'Is This Legal?', desc: 'Rapid-fire questions about UK law and your actual rights. Some answers will surprise you.', meta: '14 questions · ~8 min' },
+  ];
+
+  return `
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="mb-10">
+        <div class="text-xs font-black text-stone-600 tracking-widest">TRACK · AGES 13–18</div>
+        <h2 class="font-black text-4xl sm:text-6xl text-stone-900 leading-[0.95] tracking-tight mt-2">
+          You have rights.<br>
+          <span class="italic text-stone-500">Most people won't<br>tell you what they are.</span>
+        </h2>
+        <p class="max-w-2xl text-stone-700 text-lg leading-relaxed mt-5">This isn't a lecture. It's a guide to what you're already entitled to — under UK law and the UNCRC — plus the responsibilities that come with actually using them.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-4 mb-12">
+        ${sections.map((s) => `
+          <button onclick="setView('${s.id}', 'AGES 13–18')" class="hover:scale-[1.02] hover:-translate-y-1 transition-all text-left p-6 bg-amber-50 border-4 border-stone-900 rounded-2xl shadow-hard-md hover:shadow-hard">
+            <div class="flex items-start justify-between mb-8">
+              <div class="text-xs font-black text-stone-600 tracking-widest">PART ${s.num}</div>
+              <div class="text-rose-600 text-sm font-black">→</div>
+            </div>
+            <h3 class="font-black text-2xl text-stone-900 mb-3 leading-tight">${s.title}</h3>
+            <p class="text-sm text-stone-700 leading-relaxed mb-4">${s.desc}</p>
+            <div class="text-[10px] font-black text-stone-500 tracking-widest">${s.meta}</div>
+          </button>
+        `).join('')}
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6 pt-8 border-t-4 border-stone-900">
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 transform -rotate-[0.5deg] shadow-hard-md">
+          <div class="text-xs font-black tracking-widest text-rose-700 mb-3">GROUND RULE 01</div>
+          <h4 class="font-black text-2xl text-stone-900 mb-2">A right isn't earned.</h4>
+          <p class="text-stone-700 text-sm leading-relaxed">Nobody gives you rights as a reward. They're yours because you exist. The UNCRC still applies to you at whatever age you are under 18.</p>
+        </div>
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 transform rotate-[0.5deg] shadow-hard-md">
+          <div class="text-xs font-black tracking-widest text-rose-700 mb-3">GROUND RULE 02</div>
+          <h4 class="font-black text-2xl text-stone-900 mb-2">Responsibilities aren't the price.</h4>
+          <p class="text-stone-700 text-sm leading-relaxed">They're what makes other people's rights work — which is what makes your rights work too. Both sides matter.</p>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================================
+// TEENS — RIGHTS DECK
+// ============================================================================
+
+function renderTeensRights() {
+  const i = state.teensRightsIndex;
+  const card = teensRights[i];
+  const isLast = i === teensRights.length - 1;
+
+  return `
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+      <div class="mb-8">
+        <div class="flex items-center justify-between mb-3">
+          <div class="text-xs font-black text-stone-600 tracking-widest">PART 01 · KNOW YOUR RIGHTS</div>
+          <div class="text-xs font-black text-stone-600 tracking-widest">${i + 1} / ${teensRights.length}</div>
+        </div>
+        <div class="h-[4px] bg-stone-300 rounded-full overflow-hidden border border-stone-900">
+          <div class="h-full bg-rose-500 transition-all" style="width: ${((i + 1) / teensRights.length) * 100}%"></div>
+        </div>
+      </div>
+
+      <div class="fade-in" key="${i}">
+        <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-7 sm:p-10 shadow-hard">
+          <div class="flex items-center gap-2 mb-6">
+            <span class="chip bg-rose-200">${escapeHtml(card.article)}</span>
+            <span class="chip bg-sky-200">${escapeHtml(card.category)}</span>
+          </div>
+          <h2 class="font-black text-3xl sm:text-5xl leading-[1.05] mb-6 text-stone-900">${escapeHtml(card.headline)}</h2>
+          <p class="text-lg text-stone-800 leading-relaxed mb-6">${escapeHtml(card.body)}</p>
+          <div class="border-l-4 border-rose-500 pl-5 mb-6 bg-rose-50 py-3 rounded-r-lg">
+            <div class="text-[10px] font-black tracking-widest text-rose-700 mb-1">WHAT THIS LOOKS LIKE IN REAL LIFE</div>
+            <p class="text-stone-700 leading-relaxed">${escapeHtml(card.reallife)}</p>
+          </div>
+          <div class="pt-5 border-t-2 border-stone-900">
+            <div class="text-[10px] font-black tracking-widest text-stone-600 mb-2">AND THE RESPONSIBILITY</div>
+            <p class="text-stone-700 leading-relaxed italic">${escapeHtml(card.responsibility)}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between mt-6">
+        <button onclick="teensRightsPrev()" ${i === 0 ? 'disabled' : ''} class="bg-amber-50 border-2 border-stone-900 px-4 py-2.5 rounded-lg text-sm font-bold ${i === 0 ? 'opacity-40' : 'hover:bg-stone-900 hover:text-amber-50'}">← Previous</button>
+        <div class="flex gap-1.5">
+          ${teensRights.map((_, idx) => `<button onclick="teensRightsJump(${idx})" class="w-2 h-2 rounded-full border border-stone-900 transition-all ${idx === i ? 'bg-rose-500 w-6' : 'bg-amber-50'}"></button>`).join('')}
+        </div>
+        <button onclick="${isLast ? 'goHome()' : 'teensRightsNext()'}" class="bg-stone-900 text-amber-50 px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-rose-600">${isLast ? 'Finish' : 'Next →'}</button>
+      </div>
+    </div>
+  `;
+}
+
+function teensRightsPrev() { if (state.teensRightsIndex > 0) { state.teensRightsIndex--; render(); } }
+function teensRightsNext() { if (state.teensRightsIndex < teensRights.length - 1) { state.teensRightsIndex++; render(); } }
+function teensRightsJump(i) { state.teensRightsIndex = i; render(); }
+
+// ============================================================================
+// TEENS — SCENARIOS
+// ============================================================================
+
+function renderTeensScenarios() {
+  const s = state.teensScenario;
+  if (s.index >= teensScenarios.length) {
+    const goodCount = s.reflections.filter(r => r === 'good').length;
+    const partialCount = s.reflections.filter(r => r === 'partial').length;
+    return `
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 py-12 fade-in">
+        <div class="text-xs font-black text-stone-600 tracking-widest mb-3">PART 02 · COMPLETE</div>
+        <h2 class="font-black text-4xl sm:text-5xl text-stone-900 leading-[1.05] mb-6">Ten situations.<br>No easy answers.</h2>
+        <p class="text-stone-700 text-lg leading-relaxed mb-8">
+          ${goodCount >= 7
+            ? 'You thought carefully about people beyond yourself in almost every case. That\'s the actual skill — not memorising articles, but noticing when someone else\'s rights are in the room.'
+            : goodCount >= 4
+            ? 'You made some strong calls and some messier ones. That\'s honest. These situations exist in grey areas — the point isn\'t to always pick the "right" answer but to notice who\'s affected by the choice.'
+            : 'You leaned toward the simpler responses. Worth asking: was that because the situations didn\'t really matter to you, or because it felt like too much? Both are worth sitting with.'}
+        </p>
+        <div class="grid grid-cols-3 gap-4 mb-8">
+          <div class="p-5 bg-emerald-200 border-4 border-stone-900 rounded-2xl shadow-hard-sm">
+            <div class="text-4xl font-black mb-1">${goodCount}</div>
+            <div class="text-[10px] font-black tracking-widest text-stone-700">STRONG CALLS</div>
+          </div>
+          <div class="p-5 bg-yellow-200 border-4 border-stone-900 rounded-2xl shadow-hard-sm">
+            <div class="text-4xl font-black mb-1">${partialCount}</div>
+            <div class="text-[10px] font-black tracking-widest text-stone-700">PARTIAL</div>
+          </div>
+          <div class="p-5 bg-rose-200 border-4 border-stone-900 rounded-2xl shadow-hard-sm">
+            <div class="text-4xl font-black mb-1">${teensScenarios.length - goodCount - partialCount}</div>
+            <div class="text-[10px] font-black tracking-widest text-stone-700">TO RETHINK</div>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <button onclick="restartTeensScenarios()" class="bg-amber-50 border-2 border-stone-900 px-5 py-3 rounded-lg text-sm font-bold hover:bg-stone-900 hover:text-amber-50">Try again</button>
+          <button onclick="goHome()" class="bg-stone-900 text-amber-50 px-5 py-3 rounded-lg text-sm font-bold hover:bg-rose-600">Home</button>
+        </div>
+      </div>
+    `;
+  }
+
+  const scene = teensScenarios[s.index];
+  const show = s.selected !== null;
+
+  return `
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <div class="text-xs font-black text-stone-600 tracking-widest">PART 02 · SITUATION ROOM</div>
+          <div class="text-xs font-black text-stone-600 tracking-widest">${s.index + 1} / ${teensScenarios.length}</div>
+        </div>
+        <div class="h-[4px] bg-stone-300 rounded-full overflow-hidden border border-stone-900">
+          <div class="h-full bg-rose-500 transition-all" style="width: ${((s.index + 1) / teensScenarios.length) * 100}%"></div>
+        </div>
+      </div>
+
+      <div class="mb-5 flex flex-wrap items-center gap-2">
+        <span class="chip bg-sky-200">${escapeHtml(scene.category)}</span>
+        <span class="chip bg-yellow-200">${escapeHtml(scene.tag)}</span>
+      </div>
+
+      <h2 class="font-black text-3xl sm:text-5xl leading-[1.05] mb-5 text-stone-900">${escapeHtml(scene.title)}</h2>
+
+      <div class="bg-amber-50 border-l-4 border-stone-900 border-4 p-5 mb-6 rounded-r-lg shadow-hard-sm">
+        <p class="text-stone-800 leading-relaxed">${escapeHtml(scene.text)}</p>
+      </div>
+
+      <div class="text-xs font-black tracking-widest text-stone-600 mb-3">WHAT DO YOU DO?</div>
+      <div class="space-y-2 mb-5">
+        ${scene.choices.map((choice, i) => {
+          const isSelected = s.selected === i;
+          let bg = 'bg-amber-50 hover:bg-yellow-200';
+          if (show) {
+            if (isSelected && choice.outcome === 'good') bg = 'bg-emerald-200';
+            else if (isSelected && choice.outcome === 'partial') bg = 'bg-yellow-200';
+            else if (isSelected) bg = 'bg-rose-200';
+            else bg = 'bg-amber-50 opacity-40';
+          }
+          return `
+            <button onclick="${show ? '' : `pickTeensScenario(${i})`}" ${show ? 'disabled' : ''} class="${bg} w-full text-left p-4 rounded-lg border-2 border-stone-900 font-bold transition-all">
+              <div class="flex items-start gap-3">
+                <div class="text-xs font-black text-stone-500 mt-1 flex-shrink-0">${String.fromCharCode(65 + i)}</div>
+                <div class="text-sm sm:text-base leading-relaxed flex-1">${escapeHtml(choice.text)}</div>
+              </div>
+            </button>
+          `;
+        }).join('')}
+      </div>
+
+      ${show ? `
+        <div class="fade-in bg-stone-900 text-amber-50 rounded-2xl p-6 mb-5">
+          <div class="flex items-center gap-2 mb-3">
+            ${scene.choices[s.selected].outcome === 'good'
+              ? '<span class="chip bg-emerald-400 text-stone-900 border-stone-900">✓ STRONG CALL</span>'
+              : scene.choices[s.selected].outcome === 'partial'
+              ? '<span class="chip bg-yellow-300 text-stone-900 border-stone-900">PARTIAL</span>'
+              : '<span class="chip bg-rose-400 text-stone-900 border-stone-900">WORTH RETHINKING</span>'}
+          </div>
+          <p class="leading-relaxed">${escapeHtml(scene.choices[s.selected].feedback)}</p>
+        </div>
+        <div class="flex justify-end">
+          <button onclick="nextTeensScenario()" class="bg-stone-900 text-amber-50 px-5 py-3 rounded-lg text-sm font-bold hover:bg-rose-600">
+            ${s.index === teensScenarios.length - 1 ? 'See reflection' : 'Next situation'} →
+          </button>
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
+function pickTeensScenario(i) {
+  const s = state.teensScenario;
+  if (s.selected !== null) return;
+  s.selected = i;
+  s.reflections.push(teensScenarios[s.index].choices[i].outcome);
+  render();
+}
+function nextTeensScenario() { state.teensScenario.index++; state.teensScenario.selected = null; render(); }
+function restartTeensScenarios() { state.teensScenario = { index: 0, selected: null, reflections: [] }; render(); }
+
+// ============================================================================
+// TEENS — LEGAL QUIZ
+// ============================================================================
+
+function renderLegalQuiz() {
+  const q = state.quiz;
+  if (q.index >= legalQuiz.length) {
+    const pct = Math.round((q.correctCount / legalQuiz.length) * 100);
+    return `
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 py-12 fade-in">
+        <div class="text-xs font-black text-stone-600 tracking-widest mb-3">PART 03 · COMPLETE</div>
+        <h2 class="font-black text-5xl sm:text-6xl text-stone-900 leading-[1.05] mb-5">${q.correctCount} out of ${legalQuiz.length}.</h2>
+        <p class="text-stone-700 text-lg leading-relaxed mb-8">
+          ${pct >= 75
+            ? 'You know more than most adults do about young people\'s rights. Use that.'
+            : pct >= 50
+            ? 'You got the basics. The ones you missed are often the ones people get wrong their whole lives — worth a re-read.'
+            : 'Most of these are things schools genuinely should teach and mostly don\'t. Nothing to feel bad about — you\'re here now, which is already more than most.'}
+        </p>
+        <div class="flex gap-3">
+          <button onclick="restartQuiz()" class="bg-amber-50 border-2 border-stone-900 px-5 py-3 rounded-lg text-sm font-bold hover:bg-stone-900 hover:text-amber-50">Try again</button>
+          <button onclick="goHome()" class="bg-stone-900 text-amber-50 px-5 py-3 rounded-lg text-sm font-bold hover:bg-rose-600">Home</button>
+        </div>
+      </div>
+    `;
+  }
+
+  const question = legalQuiz[q.index];
+  const show = q.answered;
+
+  return `
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-3">
+          <div class="text-xs font-black text-stone-600 tracking-widest">PART 03 · IS THIS LEGAL?</div>
+          <div class="text-xs font-black text-stone-600 tracking-widest">${q.index + 1} / ${legalQuiz.length}</div>
+        </div>
+        <div class="h-[4px] bg-stone-300 rounded-full overflow-hidden border border-stone-900">
+          <div class="h-full bg-rose-500 transition-all" style="width: ${((q.index + 1) / legalQuiz.length) * 100}%"></div>
+        </div>
+      </div>
+
+      <div class="chip bg-sky-200 mb-5">${escapeHtml(question.short)}</div>
+      <h2 class="font-black text-2xl sm:text-3xl text-stone-900 mb-7 leading-tight">${escapeHtml(question.q)}</h2>
+
+      <div class="space-y-2 mb-5">
+        ${question.options.map((opt, i) => {
+          const isSelected = q.selected === i;
+          let bg = 'bg-amber-50 hover:bg-yellow-200';
+          if (show) {
+            if (opt.correct) bg = 'bg-emerald-200';
+            else if (isSelected) bg = 'bg-rose-200';
+            else bg = 'bg-amber-50 opacity-40';
+          }
+          return `
+            <button onclick="${show ? '' : `answerQuiz(${i})`}" ${show ? 'disabled' : ''} class="${bg} w-full text-left p-4 rounded-lg border-2 border-stone-900 font-bold transition-all">
+              <div class="flex items-start gap-3">
+                <div class="text-xs font-black text-stone-500 mt-1 flex-shrink-0">${String.fromCharCode(65 + i)}</div>
+                <div class="text-sm sm:text-base flex-1">${escapeHtml(opt.label)}</div>
+                ${show && opt.correct ? '<div class="text-emerald-700 font-black">✓</div>' : ''}
+              </div>
+            </button>
+          `;
+        }).join('')}
+      </div>
+
+      ${show ? `
+        <div class="fade-in bg-stone-900 text-amber-50 rounded-2xl p-6 mb-5">
+          <div class="text-[10px] font-black tracking-widest text-yellow-300 mb-2">CONTEXT</div>
+          <p class="leading-relaxed text-sm">${escapeHtml(question.explanation)}</p>
+        </div>
+        <div class="flex justify-end">
+          <button onclick="nextQuiz()" class="bg-stone-900 text-amber-50 px-5 py-3 rounded-lg text-sm font-bold hover:bg-rose-600">
+            ${q.index === legalQuiz.length - 1 ? 'See result' : 'Next question'} →
+          </button>
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
+function answerQuiz(i) {
+  const q = state.quiz;
+  if (q.answered) return;
+  q.answered = true; q.selected = i;
+  if (legalQuiz[q.index].options[i].correct) q.correctCount++;
+  render();
+}
+function nextQuiz() { state.quiz.index++; state.quiz.answered = false; state.quiz.selected = null; render(); }
+function restartQuiz() { state.quiz = { index: 0, answered: false, selected: null, correctCount: 0 }; render(); }
+
+// ============================================================================
+// ASK ARTICLE 42
+// ============================================================================
+
+function renderAskHome() {
+  const rotates = ['-rotate-1', 'rotate-1', '-rotate-[0.5deg]', 'rotate-[0.5deg]'];
+  const cards = askTopics.map((t, i) => `
+    <button onclick="openAskTopic('${t.id}')" class="${t.color} ${rotates[i % rotates.length]} hover:rotate-0 hover:scale-[1.02] transition-all duration-200 p-5 sm:p-6 rounded-2xl border-4 border-stone-900 text-left shadow-hard-md hover:shadow-hard hover:-translate-y-1">
+      <div class="flex items-start justify-between mb-4">
+        <div class="text-3xl">${t.icon}</div>
+        <div class="text-stone-900 font-black text-sm">→</div>
+      </div>
+      <h3 class="font-black text-base sm:text-lg text-stone-900 mb-2 leading-tight">${escapeHtml(t.title)}</h3>
+      <p class="text-stone-700 text-xs sm:text-sm leading-relaxed">${escapeHtml(t.blurb)}</p>
+    </button>
+  `).join('');
+
+  return `
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+      <div class="mb-10 max-w-3xl">
+        <div class="text-xs font-black text-stone-600 tracking-widest">ANY AGE</div>
+        <h2 class="font-black text-4xl sm:text-6xl text-stone-900 leading-[0.95] tracking-tight mt-2 mb-5">
+          What's on<br><span class="italic bg-yellow-300 px-3 inline-block transform -rotate-1">your mind?</span>
+        </h2>
+        <p class="text-stone-700 text-lg leading-relaxed">Pick a worry. We'll show you which rights are in the room, concrete things you can do, and real places you can go for help in the UK.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 mb-12">${cards}</div>
+      <div class="bg-stone-900 text-amber-50 rounded-2xl p-6 sm:p-7">
+        <div class="flex items-start gap-4">
+          <div class="flex-shrink-0 w-12 h-12 bg-yellow-300 text-stone-900 rounded-full flex items-center justify-center text-xl font-black">!</div>
+          <div>
+            <h4 class="font-black text-lg mb-1">If you are in immediate danger</h4>
+            <p class="text-stone-300 text-sm leading-relaxed">Call <span class="font-black text-yellow-300">999</span>. For 24/7 confidential support under 19, call Childline on <span class="font-black text-yellow-300">0800 1111</span>. For mental-health support any time, text <span class="font-black text-yellow-300">SHOUT to 85258</span>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function openAskTopic(id) { state.askTopicId = id; setView('ask-topic', state.ageBadge); }
+
+function renderAskTopic() {
+  const topic = askTopics.find(t => t.id === state.askTopicId);
+  if (!topic) { state.view = 'ask-home'; return renderAskHome(); }
+
+  return `
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <button onclick="setView('ask-home', state.ageBadge)" class="mb-5 text-sm font-bold text-stone-600 hover:text-stone-900">← Back to all worries</button>
+
+      <div class="${topic.color} border-4 border-stone-900 rounded-2xl p-7 sm:p-10 shadow-hard mb-6 transform -rotate-[0.3deg]">
+        <div class="text-5xl mb-4">${topic.icon}</div>
+        <h2 class="font-black text-2xl sm:text-4xl text-stone-900 leading-tight mb-3">${escapeHtml(topic.title)}</h2>
+        <p class="text-stone-800 text-base sm:text-lg leading-relaxed">${escapeHtml(topic.blurb)}</p>
+      </div>
+
+      <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 shadow-hard-md mb-6">
+        <div class="text-xs font-black tracking-widest text-rose-700 mb-4">YOUR RIGHTS HERE</div>
+        <div class="space-y-4">
+          ${topic.articles.map(a => `
+            <div class="flex gap-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-stone-900 text-amber-50 rounded-xl flex items-center justify-center font-black text-sm">${a.num}</div>
+              <div>
+                <div class="font-black text-stone-900 mb-1">Article ${a.num} — ${escapeHtml(a.title)}</div>
+                <p class="text-stone-700 text-sm leading-relaxed">${escapeHtml(a.text)}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 shadow-hard-md mb-6">
+        <div class="text-xs font-black tracking-widest text-rose-700 mb-4">WHAT YOU CAN DO</div>
+        <ul class="space-y-3">
+          ${topic.actions.map((a, i) => `
+            <li class="flex gap-3">
+              <div class="flex-shrink-0 w-7 h-7 bg-yellow-300 text-stone-900 rounded-full flex items-center justify-center font-black text-xs border-2 border-stone-900 mt-0.5">${i + 1}</div>
+              <p class="text-stone-800 leading-relaxed text-sm sm:text-base">${escapeHtml(a)}</p>
+            </li>
+          `).join('')}
+        </ul>
+      </div>
+
+      <div class="bg-stone-900 text-amber-50 rounded-2xl p-6 sm:p-8 shadow-hard">
+        <div class="text-xs font-black tracking-widest text-yellow-300 mb-4">WHERE TO TURN</div>
+        <div class="space-y-3">
+          ${topic.resources.map(r => `
+            <div class="flex items-start justify-between gap-3 pb-3 border-b border-stone-700 last:border-0 last:pb-0">
+              <div class="flex-1">
+                <div class="font-black text-amber-50 text-base">${escapeHtml(r.name)}</div>
+                <div class="text-stone-400 text-sm mt-0.5">${escapeHtml(r.detail)}</div>
+              </div>
+              ${r.url ? `<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 bg-yellow-300 text-stone-900 text-xs font-black px-3 py-2 rounded-lg hover:bg-yellow-400">Visit →</a>` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      <div class="mt-8 text-center text-sm text-stone-600">
+        <p>This page is a starting point, not a diagnosis or legal advice. For serious situations, talking to a real person — helpline, GP, trusted adult — beats reading a website.</p>
+      </div>
+    </div>
+  `;
+}
+
+// ============================================================================
+// RENDER
+// ============================================================================
+
+function render() {
+  const root = document.getElementById('app-root');
+  if (state.view === 'home') root.innerHTML = renderHome();
+  else if (state.view === 'kids-home') root.innerHTML = renderKidsHome();
+  else if (state.view === 'kids-board') root.innerHTML = renderBoardGame();
+  else if (state.view === 'kids-scenarios') root.innerHTML = renderKidsScenarios();
+  else if (state.view === 'kids-library') root.innerHTML = renderKidsLibrary();
+  else if (state.view === 'teens-home') root.innerHTML = renderTeensHome();
+  else if (state.view === 'teens-rights') root.innerHTML = renderTeensRights();
+  else if (state.view === 'teens-scenarios') root.innerHTML = renderTeensScenarios();
+  else if (state.view === 'teens-quiz') root.innerHTML = renderLegalQuiz();
+  else if (state.view === 'ask-home') root.innerHTML = renderAskHome();
+  else if (state.view === 'ask-topic') root.innerHTML = renderAskTopic();
+  else root.innerHTML = renderHome();
+}
+
+render();
+</script>
+</body>
+</html>
