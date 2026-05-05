@@ -8,11 +8,11 @@ The name comes from Article 42 itself, which says governments must make sure chi
 
 An age-picker landing routes visitors into one of three tracks:
 
-**8–12 — a playful paper-style zine** with a 21-tile board game, "what would you do" scenarios, and a library of 14 rights in kid-friendly language.
+**8–12, a playful paper-style zine** with a 21-tile board game, "what would you do" scenarios, and a library of 14 rights in kid-friendly language.
 
-**13–18 — an editorial guide** with 12 rights cards, scenarios covering real situations (partners, police stops, coming out, fake IDs), and a 14-question Scottish legal quiz.
+**13–18, an editorial guide** with 12 rights cards, scenarios covering real situations (partners, police stops, coming out, fake IDs), and a 14-question Scottish legal quiz.
 
-**Any age — Ask Article 42** — ten worry-based entry points (feeling unsafe, trouble at home, mental health, discrimination, bullying, work, privacy, etc.) that link to real Scottish and UK-wide helplines with live phone numbers.
+**Any age, Ask Article 42**, ten worry-based entry points (feeling unsafe, trouble at home, mental health, discrimination, bullying, work, privacy, etc.) that link to real Scottish and UK-wide helplines with live phone numbers.
 
 ## Helplines referenced
 
