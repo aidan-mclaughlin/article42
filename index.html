@@ -233,6 +233,112 @@ const kidsScenarios = [
   },
 ];
 
+// ---------- KIDS, RIGHTS DETECTIVE ----------
+// Each case is a short story; the kid picks every right that's at stake (multi-select).
+// `rights` are article numbers from kidsRights that are genuinely involved.
+const detectiveCases = [
+  {
+    id: "case-bus",
+    title: "The Bus Stop",
+    icon: "🚌",
+    story: "Maya, who is 9, is waiting at the bus stop after school. An older kid keeps pushing her bag off the bench and laughing. The driver sees but says nothing. When Maya tries to tell her teacher the next day, the teacher says 'just ignore them, they're only joking'.",
+    rights: [19, 12, 2],
+    explanation: "Maya's right to be safe from harm (Article 19) is being ignored, including by the driver and teacher. Her right to be heard (Article 12) is being brushed off. And Article 2 says all children are protected equally, no matter their age, this isn't 'just joking', it's bullying."
+  },
+  {
+    id: "case-doctor",
+    title: "The Doctor's Visit",
+    icon: "🏥",
+    story: "Liam, 11, is at the doctor with a sore stomach. The doctor only talks to his mum, never to him. When Liam tries to say what hurts and when, the doctor says 'I'll get the real story from your mum'. Liam stays quiet for the rest of the visit.",
+    rights: [12, 24],
+    explanation: "Article 12 says Liam has the right to be heard about decisions that affect him, including his own health. Article 24 is his right to good healthcare, and that means a doctor who actually listens to the patient, not just the parent."
+  },
+  {
+    id: "case-lunchbox",
+    title: "The Lunchbox",
+    icon: "🍱",
+    story: "Aisha brings food from home that smells different from what other kids eat. A group of kids start pointing, laughing, and pretending to gag. The lunch monitor laughs along. Aisha starts hiding her lunchbox under her jumper.",
+    rights: [2, 8, 31],
+    explanation: "Article 2 protects every child from discrimination, including for their food, language, or background. Article 8 protects who Aisha is, her culture and family identity. Article 31 (rest, play, enjoy culture) includes feeling safe enough to enjoy lunch, this case breaks all three."
+  },
+  {
+    id: "case-phone",
+    title: "The Phone Search",
+    icon: "📱",
+    story: "Sam, 12, leaves his phone on the kitchen table. He comes back to find his older cousin reading his messages 'just to check'. Sam's mum says it's fine because Sam is 'still a kid'. Sam feels really upset but doesn't know if he's allowed to be.",
+    rights: [16, 12],
+    explanation: "Article 16 is Sam's right to privacy, his messages, his diary, his stuff. Being 12 doesn't cancel that. Article 12 says Sam's feelings about it should be taken seriously when adults make rules about his stuff."
+  },
+  {
+    id: "case-newkid",
+    title: "The New Kid",
+    icon: "🌍",
+    story: "A new student joins Year 5. They've just arrived from another country and don't speak much English yet. The teacher seats them at the back and says they'll 'pick things up'. No one is told their name, and no one is asked to sit with them.",
+    rights: [2, 28, 7, 8],
+    explanation: "This case touches a lot. Article 2 (no discrimination on language or where you're from), Article 28 (the right to learn, which doesn't work if no one helps you understand), Article 7 (your name matters, and no one was told it), Article 8 (your identity, language, and culture deserve respect)."
+  },
+  {
+    id: "case-football",
+    title: "The Football Team",
+    icon: "⚽",
+    story: "Priya wants to join the school football team. The coach says 'football is more for the boys, you should try netball'. Priya is one of the best players in her PE class. She goes home and doesn't tell anyone.",
+    rights: [2, 12, 31],
+    explanation: "Article 2 says no child can be excluded because of their gender. Article 31 protects her right to play and try sports she loves. Article 12 says her own opinion about which team she joins should count, and 'go play netball' isn't really listening."
+  },
+  {
+    id: "case-tired",
+    title: "The Always-Tired Friend",
+    icon: "😴",
+    story: "Theo's best friend Ben has been falling asleep in class. He says he stays up most nights because his older brother plays loud video games and his parents work nights. Ben's grades are slipping. He begs Theo not to tell anyone because he doesn't want to be 'that kid'.",
+    rights: [31, 28, 19, 24],
+    explanation: "Ben's right to rest (Article 31) is being lost. His right to learn (Article 28) is suffering. Article 19, protection from neglect, can include not being looked after at night. And Article 24, a healthy life, includes sleep. A trusted adult needs to know, even if Ben is scared."
+  },
+  {
+    id: "case-decision",
+    title: "The Big Decision",
+    icon: "🏠",
+    story: "Tariq's parents are getting divorced. They've decided he'll live with his mum on weekdays and his dad on weekends. Nobody asked him what he thinks. He has a voice in his head saying 'kids don't get a say in this'.",
+    rights: [12, 9, 8],
+    explanation: "Article 12 is exactly about this, decisions made about Tariq's life, where his views should matter. Article 9 protects his right to keep contact with both parents. Article 8 protects his identity, including his family relationships. He can ask for a calm conversation about how he feels, that's what Article 12 was written for."
+  }
+];
+
+// ---------- KIDS, MEMORY MATCH ----------
+// Each pair = one card with the article icon + one card with the article name.
+// We use a curated subset of kidsRights so the game stays fast.
+const memoryPairs = [
+  { num: 12, name: "Being Heard", icon: "🗣️" },
+  { num: 16, name: "Privacy", icon: "🔒" },
+  { num: 19, name: "Safe From Harm", icon: "🛡️" },
+  { num: 24, name: "Health", icon: "💚" },
+  { num: 28, name: "Education", icon: "📚" },
+  { num: 31, name: "Rest & Play", icon: "🎮" },
+  { num: 2, name: "No Discrimination", icon: "🤝" },
+  { num: 42, name: "Knowing Your Rights", icon: "💡" }
+];
+
+// ---------- KIDS, DAILY CHALLENGE ----------
+// Pool of single-question challenges. We pick one per day deterministically by date,
+// so every kid sees the same daily question. Add as many as you like, the rotation
+// just walks through the array.
+const dailyQuestions = [
+  { id: "d01", q: "Which Article says all rights apply to every child, no exceptions?", options: ["Article 12", "Article 2", "Article 31"], correct: 1, explain: "Article 2: no discrimination. Every right in the UNCRC applies to every child, regardless of who they are." },
+  { id: "d02", q: "True or false: if you're under 13, adults don't have to listen to your opinion.", options: ["True", "False, Article 12 says your views matter"], correct: 1, explain: "Article 12 doesn't have an age cut-off. Your views matter on decisions that affect you, full stop." },
+  { id: "d03", q: "If a friend tells you something dangerous is happening at home, what's the strongest move?", options: ["Keep their secret no matter what", "Tell a trusted adult, even if it feels hard", "Wait until it gets worse"], correct: 1, explain: "Article 19, protection from harm, sometimes means breaking a small promise to keep a friend safe." },
+  { id: "d04", q: "Article 31 protects your right to...", options: ["Drive a car", "Rest, play, and enjoy culture", "Get extra homework"], correct: 1, explain: "Article 31, often forgotten, says rest, play, and culture aren't optional extras. They're rights." },
+  { id: "d05", q: "If a school decides to change a uniform rule that affects you, what's true under Article 12?", options: ["Schools never have to ask kids", "You have a right to share your views before the decision", "Only parents get a say"], correct: 1, explain: "Article 12: you have the right to be heard on decisions that affect you. Sharing your view doesn't mean you always win, it means you're part of the conversation." },
+  { id: "d06", q: "Article 16 protects your...", options: ["Diary, messages, and personal life", "Pocket money", "Bedroom door colour"], correct: 0, explain: "Article 16 is privacy. Your messages and personal stuff are protected, even from adults who think 'I just wanted to check'." },
+  { id: "d07", q: "Why is Article 42 the one this whole site is named after?", options: ["It's the most important right", "It says adults must tell children what their rights are", "It's about emergency phone numbers"], correct: 1, explain: "Article 42 is the right to know your rights. A site teaching them is literally doing its own job, hence the name." },
+  { id: "d08", q: "A classmate gets teased for the food they bring. What does Article 2 ask of you?", options: ["Mind your own business", "Treat them with the same respect as anyone else", "Bring different food yourself"], correct: 1, explain: "Article 2 isn't passive. It asks you to actively respect every child's identity, food, language, background, all of it." },
+  { id: "d09", q: "You've had a really long week. Your right to rest comes from...", options: ["Article 31", "Article 6", "There isn't one"], correct: 0, explain: "Article 31, the right to rest and play. Speaking up calmly when you need a break is part of that right." },
+  { id: "d10", q: "True or false: rights are something you earn by being well-behaved.", options: ["True", "False, every child has rights, no exceptions"], correct: 1, explain: "Rights aren't a reward. They're yours because you exist. Even kids who break rules still have rights, that's how rights actually work." },
+  { id: "d11", q: "If an older kid says 'do this risky thing or you can't hang out with us', that's...", options: ["A test of friendship", "Pressure that breaks Article 19, you have the right to safety", "Just how older kids are"], correct: 1, explain: "Friends don't make safety a test. Article 19 covers protection from people who pressure or exploit you." },
+  { id: "d12", q: "Which Article protects your right to learn?", options: ["Article 28", "Article 13", "Article 11"], correct: 0, explain: "Article 28: the right to education. It's not just for you, it's also a responsibility to respect classmates' right to learn." },
+  { id: "d13", q: "A teacher ignores something serious you tell them. Under Article 12, you can...", options: ["Stay quiet, they're the adult", "Try a different trusted adult, your voice still matters", "Give up on telling anyone"], correct: 1, explain: "If one adult doesn't hear you, find another. Article 12 doesn't run out after one try." },
+  { id: "d14", q: "Article 23 is specifically about...", options: ["Children with disabilities and the extra support they have a right to", "Travel", "Bedtime"], correct: 0, explain: "Article 23 protects the right to extra support and respect for children with disabilities. Mocking or excluding breaks it." },
+  { id: "d15", q: "Sharing your views online is part of...", options: ["Article 13, sharing ideas", "No right at all", "Just luck"], correct: 0, explain: "Article 13 is your right to share ideas, including online. The responsibility that comes with it: respect that others have that right too." }
+];
+
 // ---------- TEENS (13-18) ----------
 
 const teensRights = [
@@ -863,7 +969,81 @@ const state = {
   teensScenario: { index: 0, selected: null, reflections: [] },
   quiz: { index: 0, answered: false, selected: null, correctCount: 0 },
   askTopicId: null,
+  // Per-session view state for the new kids modules
+  detective: { caseIdx: 0, picks: [], revealed: false, done: false },
+  memory: { cards: [], flipped: [], matched: [], moves: 0, started: false, won: false, lockUntil: 0 },
+  daily: { revealed: false, picked: null },
 };
+
+// ============================================================================
+// PERSISTENT KIDS PROGRESS  (localStorage)
+// ============================================================================
+// Schema (single object, key = STORAGE_KEY):
+//   stickers: { [stickerId]: ISODateString }    // when each sticker was earned
+//   streak: number                               // current daily-challenge streak
+//   lastStreakDate: "YYYY-MM-DD" | null          // last day the daily was answered
+//   totalScore: number                           // running lifetime score
+const STORAGE_KEY = "article42:kids:v1";
+const progress = loadProgress();
+
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return defaultProgress();
+    const p = JSON.parse(raw);
+    return Object.assign(defaultProgress(), p);
+  } catch (e) {
+    return defaultProgress();
+  }
+}
+function defaultProgress() {
+  return { stickers: {}, streak: 0, lastStreakDate: null, totalScore: 0 };
+}
+function saveProgress() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); } catch (e) {}
+}
+function todayISO() {
+  const d = new Date();
+  const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, '0'), day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+function daysBetween(aISO, bISO) {
+  if (!aISO || !bISO) return Infinity;
+  const a = new Date(aISO + "T00:00:00"), b = new Date(bISO + "T00:00:00");
+  return Math.round((b - a) / 86400000);
+}
+function grantSticker(id) {
+  if (progress.stickers[id]) return false;
+  progress.stickers[id] = new Date().toISOString();
+  saveProgress();
+  return true;
+}
+function stickerCount() { return Object.keys(progress.stickers).length; }
+function bumpScore(n) {
+  state.score += n;
+  progress.totalScore += n;
+  saveProgress();
+}
+
+// A flat catalogue of every sticker available, used by the album view.
+// (Detective + daily stickers are generated dynamically below.)
+function allStickerDefs() {
+  const defs = [
+    { id: "board-finished",     label: "Quest Champion",       icon: "🏆", desc: "Finished the Rights Quest board game." },
+    { id: "scenarios-cleared",  label: "Choice-maker",         icon: "🧠", desc: "Worked through every What Would You Do? situation." },
+    { id: "library-explored",   label: "Library Cardholder",   icon: "📚", desc: "Visited the Rights Library." },
+    { id: "memory-played",      label: "Memory Player",        icon: "🃏", desc: "Played a round of Memory Match." },
+    { id: "memory-perfect",     label: "Memory Master",        icon: "🧩", desc: "Cleared Memory Match in 16 moves or fewer." },
+    { id: "daily-streak-3",     label: "Three-Day Streak",     icon: "✨", desc: "Answered the Daily Challenge 3 days in a row." },
+    { id: "daily-streak-7",     label: "Week of Rights",       icon: "🌟", desc: "A 7-day Daily Challenge streak." },
+    { id: "daily-streak-30",    label: "Rights Regular",       icon: "🌠", desc: "A 30-day Daily Challenge streak." },
+  ];
+  // One sticker per detective case
+  detectiveCases.forEach(c => {
+    defs.push({ id: "detective-" + c.id, label: c.title, icon: "🔎", desc: "Solved the " + c.title + " case." });
+  });
+  return defs;
+}
 
 // ============================================================================
 // HELPERS
@@ -899,7 +1079,7 @@ function setView(v, badgeText) {
 }
 
 function goHome() {
-  // Reset all local view state
+  // Reset all local view state (progress in localStorage is preserved)
   state.score = 0;
   state.board = { position: 0, dice: null, rolling: false, tileAction: null, finished: false, selectedAnswer: null, skipNext: false };
   state.kidsScenario = { current: 0, selected: null, done: false };
@@ -908,6 +1088,9 @@ function goHome() {
   state.teensScenario = { index: 0, selected: null, reflections: [] };
   state.quiz = { index: 0, answered: false, selected: null, correctCount: 0 };
   state.askTopicId = null;
+  state.detective = { caseIdx: 0, picks: [], revealed: false, done: false };
+  state.memory = { cards: [], flipped: [], matched: [], moves: 0, started: false, won: false, lockUntil: 0 };
+  state.daily = { revealed: false, picked: null };
   setView('home');
 }
 
@@ -1008,27 +1191,41 @@ function enterTrack(id, badge) {
 
 function renderKidsHome() {
   const games = [
-    { id: "kids-board", title: "Rights Quest", subtitle: "BOARD GAME ADVENTURE", desc: "Roll the dice, move around the board, discover your rights as you go. Answer questions, face real situations, collect points.", color: "bg-rose-200", rotate: "-rotate-2", emoji: "🎲" },
-    { id: "kids-scenarios", title: "What Would You Do?", subtitle: "REAL CHOICES", desc: "Tricky everyday situations. Pick what you'd actually do, then see which rights are at play.", color: "bg-sky-200", rotate: "rotate-1", emoji: "📖" },
-    { id: "kids-library", title: "Rights Library", subtitle: "QUICK REFERENCE", desc: "Flip through the key articles of the UN Convention on the Rights of the Child in plain language.", color: "bg-emerald-200", rotate: "-rotate-1", emoji: "🛡️" },
+    { id: "kids-board",     title: "Rights Quest",       subtitle: "BOARD GAME ADVENTURE", desc: "Roll the dice, move around the board, discover your rights as you go. Answer questions, face real situations, collect points.", color: "bg-rose-200",    rotate: "-rotate-2",        emoji: "🎲", done: !!progress.stickers['board-finished'] },
+    { id: "kids-scenarios", title: "What Would You Do?", subtitle: "REAL CHOICES",         desc: "Tricky everyday situations. Pick what you'd actually do, then see which rights are at play.", color: "bg-sky-200",     rotate: "rotate-1",         emoji: "📖", done: !!progress.stickers['scenarios-cleared'] },
+    { id: "kids-library",   title: "Rights Library",     subtitle: "QUICK REFERENCE",      desc: "Flip through the key articles of the UN Convention on the Rights of the Child in plain language.", color: "bg-emerald-200", rotate: "-rotate-1",        emoji: "🛡️", done: !!progress.stickers['library-explored'] },
+    { id: "kids-detective", title: "Rights Detective",   subtitle: "CASE FILES",           desc: "Read short stories, spot every right at stake. The more you do, the easier it gets to see them in real life.", color: "bg-amber-200",   rotate: "rotate-[0.5deg]",  emoji: "🔎", done: !!progress.stickers['detective-' + (detectiveCases[detectiveCases.length-1].id)] },
+    { id: "kids-memory",    title: "Memory Match",       subtitle: "QUICK MINI-GAME",      desc: "Match each article icon to its name. Fast, replayable, sticks in your head.", color: "bg-yellow-200",  rotate: "-rotate-[0.5deg]", emoji: "🧩", done: !!progress.stickers['memory-played'] },
+    { id: "kids-daily",     title: "Daily Challenge",    subtitle: "ONE NEW QUESTION",     desc: "A new question every day. Build a streak. Come back tomorrow to keep it alive.", color: "bg-orange-200",  rotate: "rotate-[1deg]",    emoji: "🔥", done: !!progress.stickers['daily-' + todayISO()] },
   ];
+
+  const earned = Object.keys(progress.stickers).length;
+  const todayDone = !!progress.stickers['daily-' + todayISO()];
 
   return `
     <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
-      <div class="mb-8">
-        <div class="text-xs font-black text-stone-600 tracking-widest">TRACK · AGES 8–12</div>
-        <h2 class="font-black text-3xl sm:text-5xl text-stone-900 leading-tight mt-1">Rights Quest</h2>
-        <p class="text-stone-700 text-base sm:text-lg mt-2 max-w-2xl">Three ways in. Start wherever sounds fun.</p>
+      <div class="mb-8 flex items-end justify-between flex-wrap gap-4">
+        <div>
+          <div class="text-xs font-black text-stone-600 tracking-widest">TRACK · AGES 8–12</div>
+          <h2 class="font-black text-3xl sm:text-5xl text-stone-900 leading-tight mt-1">Rights Quest</h2>
+          <p class="text-stone-700 text-base sm:text-lg mt-2 max-w-2xl">Six ways in. Pick whichever sounds fun, your stickers and streak save automatically.</p>
+        </div>
+        <div class="flex items-center gap-2 flex-wrap">
+          <button onclick="setView('kids-album','AGES 8–12')" class="bg-amber-50 border-2 border-stone-900 px-3 py-2 rounded-lg text-sm font-black hover:bg-stone-900 hover:text-amber-50 flex items-center gap-1.5">📒 Album · ${earned}</button>
+          <div class="bg-stone-900 text-amber-50 px-3 py-2 rounded-lg text-sm font-black flex items-center gap-1.5">🔥 ${progress.streak}-day streak</div>
+          ${todayDone ? '' : `<div class="bg-yellow-300 text-stone-900 border-2 border-stone-900 px-3 py-2 rounded-lg text-xs font-black tracking-widest animate-pulse">DAILY READY</div>`}
+        </div>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-5 sm:gap-6 mb-10">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mb-10">
         ${games.map(g => `
-          <button onclick="setView('${g.id}', 'AGES 8–12')" class="${g.color} ${g.rotate} hover:rotate-0 hover:scale-[1.02] transition-all duration-300 p-6 sm:p-7 rounded-2xl border-4 border-stone-900 text-left shadow-hard hover:shadow-hard-sm hover:translate-x-[3px] hover:translate-y-[3px]">
+          <button onclick="setView('${g.id}', 'AGES 8–12')" class="${g.color} ${g.rotate} hover:rotate-0 hover:scale-[1.02] transition-all duration-300 p-6 sm:p-7 rounded-2xl border-4 border-stone-900 text-left shadow-hard hover:shadow-hard-sm hover:translate-x-[3px] hover:translate-y-[3px] relative">
+            ${g.done ? '<div class="absolute top-3 right-3 bg-emerald-500 text-amber-50 border-2 border-stone-900 rounded-full w-8 h-8 flex items-center justify-center text-sm font-black shadow-hard-sm">✓</div>' : ''}
             <div class="mb-5 text-5xl">${g.emoji}</div>
             <div class="text-xs font-black text-stone-700 tracking-widest mb-1">${g.subtitle}</div>
             <h3 class="font-black text-2xl text-stone-900 mb-3 leading-tight">${g.title}</h3>
             <p class="text-stone-800 text-sm leading-relaxed">${g.desc}</p>
-            <div class="mt-5 inline-flex items-center gap-1.5 font-black text-stone-900 text-sm">Start →</div>
+            <div class="mt-5 inline-flex items-center gap-1.5 font-black text-stone-900 text-sm">${g.done ? 'Play again →' : 'Start →'}</div>
           </button>
         `).join('')}
       </div>
@@ -1264,29 +1461,29 @@ function rollDice() {
 function handleTile(idx) {
   const b = state.board;
   const tile = boardTiles[idx];
-  if (tile.type === 'finish') { b.finished = true; return; }
+  if (tile.type === 'finish') { b.finished = true; grantSticker('board-finished'); return; }
   if (tile.type === 'right') b.tileAction = { kind: 'right', ...tile };
   else if (tile.type === 'question') b.tileAction = { kind: 'question', ...tile };
   else if (tile.type === 'scenario') b.tileAction = { kind: 'scenario', ...tile };
-  else if (tile.type === 'bonus') { state.score += 5; b.tileAction = { kind: 'info', text: tile.text }; }
+  else if (tile.type === 'bonus') { bumpScore(5); b.tileAction = { kind: 'info', text: tile.text }; }
   else if (tile.type === 'skip') { b.skipNext = true; b.tileAction = { kind: 'info', text: tile.text }; }
 }
 
 function submitBoardAnswer(idx) {
   const b = state.board;
   b.selectedAnswer = idx;
-  if (idx === b.tileAction.correct) state.score += 10;
-  else state.score = Math.max(0, state.score - 2);
+  if (idx === b.tileAction.correct) bumpScore(10);
+  else { state.score = Math.max(0, state.score - 2); progress.totalScore = Math.max(0, progress.totalScore - 2); saveProgress(); }
   render();
 }
 
-function acknowledgeRight() { state.score += 3; closeTileAction(); }
+function acknowledgeRight() { bumpScore(3); closeTileAction(); }
 
 function closeTileAction() {
   const b = state.board;
   b.tileAction = null;
   b.selectedAnswer = null;
-  if (b.position === boardTiles.length - 1) b.finished = true;
+  if (b.position === boardTiles.length - 1) { b.finished = true; grantSticker('board-finished'); }
   render();
 }
 
@@ -1376,15 +1573,15 @@ function pickKidsScenario(i) {
   if (s.selected !== null) return;
   s.selected = i;
   const outcome = kidsScenarios[s.current].choices[i].outcome;
-  if (outcome === 'good') state.score += 10;
-  else if (outcome === 'ok') state.score += 3;
+  if (outcome === 'good') bumpScore(10);
+  else if (outcome === 'ok') bumpScore(3);
   render();
 }
 
 function nextKidsScenario() {
   const s = state.kidsScenario;
   if (s.current < kidsScenarios.length - 1) { s.current++; s.selected = null; }
-  else { s.done = true; }
+  else { s.done = true; grantSticker('scenarios-cleared'); }
   render();
 }
 
@@ -1395,6 +1592,7 @@ function restartKidsScenarios() { state.kidsScenario = { current: 0, selected: n
 // ============================================================================
 
 function renderKidsLibrary() {
+  grantSticker('library-explored');
   const colors = ['bg-rose-200', 'bg-sky-200', 'bg-emerald-200', 'bg-yellow-200', 'bg-amber-200', 'bg-orange-200'];
   const rotates = ['-rotate-1', 'rotate-1', '-rotate-[0.5deg]', 'rotate-[0.5deg]', '-rotate-2', 'rotate-2'];
   const cards = kidsRights.map((r, i) => `
@@ -1424,6 +1622,454 @@ function renderKidsLibrary() {
       </div>
     </div>
   `;
+}
+
+// ============================================================================
+// KIDS, RIGHTS DETECTIVE
+// ============================================================================
+
+function renderKidsDetective() {
+  const d = state.detective;
+
+  if (d.done) {
+    return `
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+        <div class="bg-yellow-300 border-4 border-stone-900 rounded-2xl p-8 text-center shadow-hard transform -rotate-1">
+          <div class="text-6xl mb-3">🔎</div>
+          <h3 class="font-black text-4xl text-stone-900 mb-2">Case files closed!</h3>
+          <p class="text-stone-800 text-lg mb-5">You worked through all ${detectiveCases.length} cases. The more you do this, the easier it gets to spot rights at play in real life.</p>
+          <div class="flex flex-wrap items-center justify-center gap-3">
+            <button onclick="restartDetective()" class="bg-stone-900 text-amber-50 font-bold px-6 py-3 rounded-lg hover:bg-rose-600">Replay cases</button>
+            <button onclick="setView('kids-album','AGES 8–12')" class="bg-amber-50 border-2 border-stone-900 text-stone-900 font-bold px-6 py-3 rounded-lg hover:bg-stone-900 hover:text-amber-50">See your stickers →</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  const c = detectiveCases[d.caseIdx];
+  const choices = kidsRights;
+
+  const optionsHtml = choices.map(r => {
+    const isPicked = d.picks.includes(r.num);
+    const isAnswer = c.rights.includes(r.num);
+    let bg = 'bg-amber-50 hover:bg-yellow-200';
+    if (d.revealed) {
+      if (isAnswer) bg = 'bg-emerald-300';
+      else if (isPicked) bg = 'bg-rose-300';
+      else bg = 'bg-amber-50 opacity-50';
+    } else if (isPicked) {
+      bg = 'bg-yellow-300';
+    }
+    return `
+      <button ${d.revealed ? 'disabled' : ''} onclick="${d.revealed ? '' : `toggleDetectivePick(${r.num})`}" class="${bg} border-2 border-stone-900 rounded-lg px-3 py-2 text-left text-sm font-bold transition-all hover:shadow-hard-sm">
+        <span class="font-black mr-1">#${r.num}</span> ${escapeHtml(r.title)}
+      </button>
+    `;
+  }).join('');
+
+  const progressDots = detectiveCases.map((_, i) => {
+    let bg = 'bg-amber-50';
+    if (i < d.caseIdx) bg = 'bg-emerald-400';
+    else if (i === d.caseIdx) bg = 'bg-yellow-300';
+    return `<div class="h-2 flex-1 rounded-full border-2 border-stone-900 ${bg}"></div>`;
+  }).join('');
+
+  return `
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <div class="mb-6">
+        <div class="text-xs font-bold text-stone-600 tracking-widest">RIGHTS QUEST · GAME 4</div>
+        <h2 class="font-black text-3xl sm:text-4xl text-stone-900">Rights Detective</h2>
+        <p class="text-stone-700 mt-2">Read the case. Pick every right that's at stake (there can be more than one). Then reveal.</p>
+        <div class="mt-3 flex items-center gap-2">${progressDots}</div>
+      </div>
+
+      <div class="bg-amber-100 border-4 border-stone-900 rounded-2xl p-6 sm:p-8 shadow-hard transform -rotate-[0.4deg]">
+        <div class="flex items-start gap-3 mb-4">
+          <div class="w-12 h-12 bg-stone-900 text-amber-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">${c.icon}</div>
+          <div>
+            <div class="text-xs font-black tracking-widest text-rose-700">CASE FILE ${String(d.caseIdx + 1).padStart(2, '0')} OF ${String(detectiveCases.length).padStart(2, '0')}</div>
+            <h3 class="font-black text-2xl text-stone-900 leading-tight">${escapeHtml(c.title)}</h3>
+          </div>
+        </div>
+        <p class="text-stone-800 text-base sm:text-lg italic border-l-4 border-stone-900 pl-4 mb-5 leading-relaxed">"${escapeHtml(c.story)}"</p>
+
+        <div class="text-xs font-black tracking-widest text-stone-600 mb-3">WHICH RIGHTS ARE AT STAKE? (PICK ANY THAT APPLY)</div>
+        <div class="grid sm:grid-cols-2 gap-2 mb-5">${optionsHtml}</div>
+
+        ${d.revealed ? `
+          <div class="bg-stone-900 text-amber-50 rounded-lg p-5 mb-4">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-yellow-300">✨</span>
+              <span class="font-black tracking-widest text-xs">DETECTIVE'S NOTE</span>
+            </div>
+            <p class="leading-relaxed">${escapeHtml(c.explanation)}</p>
+          </div>
+          <button onclick="nextDetective()" class="bg-stone-900 text-amber-50 font-bold px-6 py-3 rounded-lg hover:bg-rose-600">
+            ${d.caseIdx < detectiveCases.length - 1 ? 'Next case →' : 'Wrap up →'}
+          </button>
+        ` : `
+          <div class="flex flex-wrap items-center gap-3">
+            <button onclick="revealDetective()" ${d.picks.length === 0 ? 'disabled' : ''} class="bg-stone-900 text-amber-50 font-black px-6 py-3 rounded-lg hover:bg-rose-600 disabled:opacity-40">
+              Reveal answer
+            </button>
+            <span class="text-xs text-stone-600 font-bold">${d.picks.length} selected</span>
+          </div>
+        `}
+      </div>
+    </div>
+  `;
+}
+
+function toggleDetectivePick(num) {
+  const d = state.detective;
+  if (d.revealed) return;
+  const i = d.picks.indexOf(num);
+  if (i === -1) d.picks.push(num); else d.picks.splice(i, 1);
+  render();
+}
+
+function revealDetective() {
+  const d = state.detective;
+  if (d.picks.length === 0) return;
+  d.revealed = true;
+  const c = detectiveCases[d.caseIdx];
+  // Score: +5 per correct match, no penalty for misses (we want them to pick boldly).
+  const correctPicks = d.picks.filter(n => c.rights.includes(n)).length;
+  bumpScore(correctPicks * 5);
+  // Sticker only if they got at least one right and didn't pick more than half wrong.
+  if (correctPicks > 0) grantSticker('detective-' + c.id);
+  render();
+}
+
+function nextDetective() {
+  const d = state.detective;
+  if (d.caseIdx < detectiveCases.length - 1) {
+    d.caseIdx++;
+    d.picks = [];
+    d.revealed = false;
+  } else {
+    d.done = true;
+  }
+  render();
+}
+
+function restartDetective() {
+  state.detective = { caseIdx: 0, picks: [], revealed: false, done: false };
+  render();
+}
+
+// ============================================================================
+// KIDS, MEMORY MATCH
+// ============================================================================
+
+function buildMemoryDeck() {
+  // Build pairs of cards: one "icon" card and one "name" card per right.
+  const deck = [];
+  memoryPairs.forEach((p, i) => {
+    deck.push({ pairId: i, kind: 'icon', text: p.icon, num: p.num });
+    deck.push({ pairId: i, kind: 'name', text: p.name, num: p.num });
+  });
+  // Shuffle (Fisher–Yates)
+  for (let i = deck.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [deck[i], deck[j]] = [deck[j], deck[i]];
+  }
+  return deck;
+}
+
+function renderKidsMemory() {
+  const m = state.memory;
+  if (!m.started) {
+    m.cards = buildMemoryDeck();
+    m.flipped = [];
+    m.matched = [];
+    m.moves = 0;
+    m.won = false;
+    m.lockUntil = 0;
+    m.started = true;
+  }
+
+  const cardsHtml = m.cards.map((card, idx) => {
+    const isMatched = m.matched.includes(idx);
+    const isFlipped = m.flipped.includes(idx) || isMatched;
+    const front = isFlipped
+      ? `<div class="flex flex-col items-center justify-center h-full px-1 text-center">
+           ${card.kind === 'icon'
+             ? `<div class="text-3xl sm:text-4xl">${card.text}</div>`
+             : `<div class="font-black text-[10px] sm:text-xs leading-tight text-stone-900">${escapeHtml(card.text)}</div>`}
+           <div class="text-[8px] font-black tracking-widest text-stone-600 mt-1">#${card.num}</div>
+         </div>`
+      : `<div class="flex items-center justify-center h-full text-3xl sm:text-4xl text-amber-50">42</div>`;
+    const bg = isMatched
+      ? 'bg-emerald-300'
+      : (isFlipped ? 'bg-amber-50' : 'bg-stone-900');
+    return `
+      <button onclick="flipMemoryCard(${idx})" ${isMatched || isFlipped ? 'disabled' : ''} class="${bg} aspect-square border-4 border-stone-900 rounded-xl ${isMatched ? '' : 'hover:scale-105'} transition-all shadow-hard-sm">
+        ${front}
+      </button>
+    `;
+  }).join('');
+
+  const winBanner = m.won ? `
+    <div class="bg-yellow-300 border-4 border-stone-900 rounded-2xl p-6 text-center shadow-hard transform rotate-[0.5deg] mb-6">
+      <div class="text-5xl mb-2">🧩</div>
+      <h3 class="font-black text-3xl text-stone-900">All matched!</h3>
+      <p class="text-stone-800 mt-1">Cleared in <span class="font-black">${m.moves} moves</span>${m.moves <= 16 ? ', that\'s a Memory Master finish!' : '.'}</p>
+      <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+        <button onclick="restartMemory()" class="bg-stone-900 text-amber-50 font-bold px-6 py-3 rounded-lg hover:bg-rose-600">Play again</button>
+        <button onclick="setView('kids-album','AGES 8–12')" class="bg-amber-50 border-2 border-stone-900 text-stone-900 font-bold px-6 py-3 rounded-lg hover:bg-stone-900 hover:text-amber-50">See your stickers →</button>
+      </div>
+    </div>` : '';
+
+  return `
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <div class="mb-6 flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <div class="text-xs font-bold text-stone-600 tracking-widest">RIGHTS QUEST · GAME 5</div>
+          <h2 class="font-black text-3xl sm:text-4xl text-stone-900">Memory Match</h2>
+          <p class="text-stone-700 mt-1">Match the article icon with its name. Best in 16 moves or fewer.</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <div class="bg-stone-900 text-amber-50 px-3 py-2 rounded-lg text-sm font-bold">${m.moves} moves</div>
+          <button onclick="restartMemory()" class="bg-amber-50 border-2 border-stone-900 px-3 py-2 rounded-lg text-sm font-bold hover:bg-stone-900 hover:text-amber-50">↻ Reset</button>
+        </div>
+      </div>
+
+      ${winBanner}
+
+      <div class="bg-amber-100 border-4 border-stone-900 rounded-2xl p-4 sm:p-6 shadow-hard">
+        <div class="grid grid-cols-4 gap-2 sm:gap-3">${cardsHtml}</div>
+      </div>
+    </div>
+  `;
+}
+
+function flipMemoryCard(idx) {
+  const m = state.memory;
+  if (Date.now() < m.lockUntil) return;
+  if (m.matched.includes(idx) || m.flipped.includes(idx)) return;
+  if (m.flipped.length >= 2) return;
+
+  m.flipped.push(idx);
+
+  if (m.flipped.length === 2) {
+    m.moves++;
+    const [a, b] = m.flipped;
+    if (m.cards[a].pairId === m.cards[b].pairId) {
+      // Match!
+      m.matched.push(a, b);
+      m.flipped = [];
+      bumpScore(2);
+      if (m.matched.length === m.cards.length) {
+        m.won = true;
+        grantSticker('memory-played');
+        if (m.moves <= 16) grantSticker('memory-perfect');
+      }
+    } else {
+      // Brief lock so kid sees both cards before they flip back
+      m.lockUntil = Date.now() + 900;
+      setTimeout(() => { m.flipped = []; render(); }, 900);
+    }
+  }
+  render();
+}
+
+function restartMemory() {
+  state.memory = { cards: [], flipped: [], matched: [], moves: 0, started: false, won: false, lockUntil: 0 };
+  render();
+}
+
+// ============================================================================
+// KIDS, DAILY CHALLENGE
+// ============================================================================
+
+function dailyIndexForDate(iso) {
+  // Deterministic: same date → same question for everyone, world-wide.
+  // Hash YYYYMMDD into a number, mod the question pool.
+  const n = parseInt(iso.replace(/-/g, ''), 10);
+  return n % dailyQuestions.length;
+}
+
+function renderKidsDaily() {
+  const today = todayISO();
+  const q = dailyQuestions[dailyIndexForDate(today)];
+  const alreadyAnsweredToday = !!progress.stickers['daily-' + today];
+  const d = state.daily;
+
+  // If they answered today already, show the streak summary view.
+  if (alreadyAnsweredToday && !d.revealed) {
+    return `
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 py-8 fade-in">
+        <div class="mb-6">
+          <div class="text-xs font-bold text-stone-600 tracking-widest">RIGHTS QUEST · GAME 6</div>
+          <h2 class="font-black text-3xl sm:text-4xl text-stone-900">Daily Challenge</h2>
+        </div>
+        <div class="bg-yellow-300 border-4 border-stone-900 rounded-2xl p-7 text-center shadow-hard transform rotate-[0.4deg]">
+          <div class="text-6xl mb-3">🔥</div>
+          <h3 class="font-black text-3xl text-stone-900 mb-1">Already done today!</h3>
+          <p class="text-stone-800 text-lg mb-2">Current streak: <span class="font-black">${progress.streak} day${progress.streak === 1 ? '' : 's'}</span></p>
+          <p class="text-stone-700 text-sm">Come back tomorrow to keep it alive. Streaks reset if you miss a day.</p>
+          <div class="mt-5">
+            <button onclick="setView('kids-album','AGES 8–12')" class="bg-stone-900 text-amber-50 font-bold px-6 py-3 rounded-lg hover:bg-rose-600">See your stickers →</button>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <div class="mb-6 flex items-center justify-between flex-wrap gap-3">
+        <div>
+          <div class="text-xs font-bold text-stone-600 tracking-widest">RIGHTS QUEST · GAME 6</div>
+          <h2 class="font-black text-3xl sm:text-4xl text-stone-900">Daily Challenge</h2>
+          <p class="text-stone-700 mt-1">One new question, every day. Keep your streak alive.</p>
+        </div>
+        <div class="bg-stone-900 text-amber-50 px-3 py-2 rounded-lg text-sm font-bold">🔥 ${progress.streak} day${progress.streak === 1 ? '' : 's'}</div>
+      </div>
+
+      <div class="bg-amber-50 border-4 border-stone-900 rounded-2xl p-7 shadow-hard transform -rotate-[0.3deg]">
+        <div class="text-xs font-black tracking-widest text-rose-700 mb-3">TODAY · ${escapeHtml(today)}</div>
+        <h3 class="font-black text-xl sm:text-2xl text-stone-900 mb-5 leading-tight">${escapeHtml(q.q)}</h3>
+        <div class="space-y-2 mb-5">
+          ${q.options.map((opt, i) => {
+            const isPicked = d.picked === i;
+            const isCorrect = i === q.correct;
+            let bg = 'bg-amber-50 hover:bg-yellow-200';
+            if (d.revealed) {
+              if (isCorrect) bg = 'bg-emerald-300';
+              else if (isPicked) bg = 'bg-rose-300';
+              else bg = 'bg-amber-50 opacity-50';
+            }
+            return `
+              <button onclick="${d.revealed ? '' : `submitDaily(${i})`}" ${d.revealed ? 'disabled' : ''} class="${bg} w-full text-left p-4 rounded-lg border-2 border-stone-900 font-bold transition-all">
+                ${escapeHtml(opt)}
+              </button>
+            `;
+          }).join('')}
+        </div>
+        ${d.revealed ? `
+          <div class="bg-stone-900 text-amber-50 rounded-lg p-5 mb-3">
+            <p class="font-bold mb-2">${d.picked === q.correct ? '✓ Nailed it!' : 'Not quite, but now you know.'}</p>
+            <p class="leading-relaxed text-sm">${escapeHtml(q.explain)}</p>
+          </div>
+          <p class="text-stone-700 text-sm">Streak now <span class="font-black">${progress.streak} day${progress.streak === 1 ? '' : 's'}</span>. New question tomorrow.</p>
+          <div class="mt-4">
+            <button onclick="setView('kids-home','AGES 8–12')" class="bg-stone-900 text-amber-50 font-bold px-6 py-3 rounded-lg hover:bg-rose-600">Back to Rights Quest →</button>
+          </div>
+        ` : ''}
+      </div>
+    </div>
+  `;
+}
+
+function submitDaily(i) {
+  const d = state.daily;
+  if (d.revealed) return;
+  d.picked = i;
+  d.revealed = true;
+
+  const today = todayISO();
+  const q = dailyQuestions[dailyIndexForDate(today)];
+
+  // First time today? Update streak + grant daily sticker, regardless of right/wrong
+  // (the goal is showing up; the explanation does the teaching).
+  const stickerId = 'daily-' + today;
+  if (!progress.stickers[stickerId]) {
+    grantSticker(stickerId);
+
+    const last = progress.lastStreakDate;
+    const gap = daysBetween(last, today);
+    if (gap === 1) progress.streak += 1;
+    else if (gap === 0) { /* same day, leave streak alone */ }
+    else progress.streak = 1;
+    progress.lastStreakDate = today;
+
+    // Streak milestones
+    if (progress.streak >= 3) grantSticker('daily-streak-3');
+    if (progress.streak >= 7) grantSticker('daily-streak-7');
+    if (progress.streak >= 30) grantSticker('daily-streak-30');
+
+    saveProgress();
+  }
+
+  if (i === q.correct) bumpScore(5);
+  render();
+}
+
+// ============================================================================
+// KIDS, STICKER ALBUM
+// ============================================================================
+
+function renderKidsAlbum() {
+  const defs = allStickerDefs();
+  const total = defs.length;
+  const earned = defs.filter(d => progress.stickers[d.id]).length;
+  // Plus any "daily-YYYY-MM-DD" stickers earned that aren't in defs
+  const dynamicDailies = Object.keys(progress.stickers).filter(k => k.startsWith('daily-') && !k.startsWith('daily-streak-'));
+
+  const tilesHtml = defs.map(d => {
+    const got = !!progress.stickers[d.id];
+    return `
+      <div class="${got ? 'bg-amber-50' : 'bg-stone-100'} border-4 border-stone-900 rounded-2xl p-4 ${got ? 'shadow-hard-sm' : 'opacity-60'} transform ${got ? 'rotate-[0.5deg]' : ''} transition-all">
+        <div class="text-4xl mb-2 text-center">${got ? d.icon : '🔒'}</div>
+        <div class="font-black text-stone-900 text-sm text-center leading-tight">${escapeHtml(d.label)}</div>
+        <div class="text-[11px] text-stone-600 text-center mt-1 leading-snug">${escapeHtml(d.desc)}</div>
+      </div>
+    `;
+  }).join('');
+
+  return `
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 fade-in">
+      <div class="mb-6">
+        <div class="text-xs font-bold text-stone-600 tracking-widest">RIGHTS QUEST · ALBUM</div>
+        <h2 class="font-black text-3xl sm:text-5xl text-stone-900">Sticker Album</h2>
+        <p class="text-stone-700 text-base sm:text-lg mt-2">Your collection, kept on this device. Keep playing to fill it in.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-3 sm:gap-4 mb-6">
+        <div class="bg-rose-200 border-4 border-stone-900 rounded-2xl p-5 transform -rotate-1 shadow-hard">
+          <div class="text-xs font-black text-stone-700 tracking-widest mb-1">STICKERS</div>
+          <div class="font-black text-4xl text-stone-900">${earned}<span class="text-stone-600 text-2xl"> / ${total}</span></div>
+        </div>
+        <div class="bg-yellow-200 border-4 border-stone-900 rounded-2xl p-5 transform rotate-1 shadow-hard">
+          <div class="text-xs font-black text-stone-700 tracking-widest mb-1">DAILY STREAK</div>
+          <div class="font-black text-4xl text-stone-900">🔥 ${progress.streak}</div>
+          <div class="text-xs text-stone-700 mt-1">${progress.lastStreakDate ? 'Last played ' + escapeHtml(progress.lastStreakDate) : 'Not started yet'}</div>
+        </div>
+        <div class="bg-emerald-200 border-4 border-stone-900 rounded-2xl p-5 transform -rotate-[0.5deg] shadow-hard">
+          <div class="text-xs font-black text-stone-700 tracking-widest mb-1">LIFETIME POINTS</div>
+          <div class="font-black text-4xl text-stone-900">${progress.totalScore}</div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 mb-8">${tilesHtml}</div>
+
+      ${dynamicDailies.length > 0 ? `
+        <div class="bg-stone-900 text-amber-50 rounded-2xl p-6 mb-6 transform rotate-[0.3deg]">
+          <div class="text-xs font-black tracking-widest text-yellow-300 mb-3">DAILY CHALLENGE LOG</div>
+          <p class="text-stone-300 text-sm mb-3">You've shown up on ${dynamicDailies.length} day${dynamicDailies.length === 1 ? '' : 's'}.</p>
+          <div class="flex flex-wrap gap-2">
+            ${dynamicDailies.sort().slice(-30).map(k => `<span class="chip bg-yellow-300 text-stone-900">${escapeHtml(k.replace('daily-', ''))}</span>`).join('')}
+          </div>
+        </div>
+      ` : ''}
+
+      <div class="flex flex-wrap items-center gap-3 pt-6 border-t-4 border-stone-900">
+        <button onclick="setView('kids-home','AGES 8–12')" class="bg-stone-900 text-amber-50 font-bold px-5 py-3 rounded-lg hover:bg-rose-600">← Back to Rights Quest</button>
+        <button onclick="resetKidsProgress()" class="bg-amber-50 border-2 border-stone-900 text-stone-900 font-bold px-5 py-3 rounded-lg hover:bg-rose-200 text-sm">Reset progress</button>
+      </div>
+    </div>
+  `;
+}
+
+function resetKidsProgress() {
+  if (!confirm("Reset all stickers, streak, and lifetime score? This can't be undone.")) return;
+  Object.assign(progress, defaultProgress());
+  saveProgress();
+  state.score = 0;
+  render();
 }
 
 // ============================================================================
@@ -1861,6 +2507,10 @@ function render() {
   else if (state.view === 'kids-board') root.innerHTML = renderBoardGame();
   else if (state.view === 'kids-scenarios') root.innerHTML = renderKidsScenarios();
   else if (state.view === 'kids-library') root.innerHTML = renderKidsLibrary();
+  else if (state.view === 'kids-detective') root.innerHTML = renderKidsDetective();
+  else if (state.view === 'kids-memory') root.innerHTML = renderKidsMemory();
+  else if (state.view === 'kids-daily') root.innerHTML = renderKidsDaily();
+  else if (state.view === 'kids-album') root.innerHTML = renderKidsAlbum();
   else if (state.view === 'teens-home') root.innerHTML = renderTeensHome();
   else if (state.view === 'teens-rights') root.innerHTML = renderTeensRights();
   else if (state.view === 'teens-scenarios') root.innerHTML = renderTeensScenarios();
