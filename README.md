@@ -27,3 +27,36 @@ Single `index.html` file. Tailwind via CDN, Nunito from Google Fonts, vanilla JS
 ## License
 
 [MIT](./LICENSE)
+
+## Development & making changes
+
+Everything lives in **one file: `index.html`** — Tailwind via CDN, Nunito from
+Google Fonts, and a vanilla-JS state machine that routes the three tracks. No
+build step, no dependencies to install.
+
+```bash
+python3 -m http.server 8000   # or just open index.html
+```
+
+Guidance for editors (human or agent):
+
+- **Content lives in the JS data structures** inside the `<script>` block
+  (rights cards, scenarios, quiz questions, helpline entries) — edit data, not
+  markup, where possible.
+- **Helpline numbers are safety-critical content.** Verify any number against
+  the operator's own website before changing it, and never remove a helpline
+  without a replacement.
+- **Audience-appropriate language is the product.** The 8–12 track stays
+  playful and simple; the 13–18 track is frank but non-judgemental. Legal
+  claims must hold **for Scotland specifically** (UNCRC (Incorporation)
+  (Scotland) Act 2024 — not England/Wales law).
+- Keep it accessible: semantic headings, alt text, visible focus, high
+  contrast. Young people on old phones and screen readers are the audience.
+
+## Deploy
+
+Static host — currently Netlify; any static server works (`robots.txt` and
+`site.webmanifest` included). No analytics, no cookies, no personal data
+collected — keep it that way.
+
+Maintained by the SoftCare team (SoftCare-UK) as a public-good resource.
